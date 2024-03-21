@@ -1,0 +1,26 @@
+.wrapper {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+header {
+	grid-area: header; /* Placerar elementet i grid-området "header". */
+	background-color: black; /* Anger bakgrundsfärg. */
+	display: grid;
+}
+
+header h1 {
+	display: flex;
+	justify-content: center;
+}
+
+header h1 a {
+	text-decoration: none;
+	color: white;
+}
+
+main {
+	grid-area: main; /* Placerar elementet i grid-området "header". */
+}
