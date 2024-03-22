@@ -1,18 +1,6 @@
-body {
-	margin: 0px;
-	background-color: #1e2023;
-	font-family: "Fira Sans", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 .menu-icon {
 	height: 30px;
 	width: 30px;
-	padding: 15px;
-	position: fixed;
-	left: 25px;
-	top: 15px;
 	cursor: pointer;
 	z-index: 2;
 }
@@ -76,11 +64,9 @@ nav ul {
 	cursor: pointer;
 	display: flex;
 	justify-content: space-around;
-	/*
-	border-top-style: solid;
+	/* 	border-top-style: solid;
 	border-bottom-style: solid;
-	padding: 10px 0;
-	*/
+	padding: 10px 0; */
 }
 
 nav ul li {
@@ -169,4 +155,14 @@ body.nav-active nav ul li:nth-child(3) {
 }
 body.nav-active nav ul li:nth-child(4) {
 	transition-delay: 1.1s;
+}
+
+@media only screen and (orientation: portrait) and (max-width: 880px) {
+	nav ul {
+		display: block;
+	}
+
+	nav ul li {
+		padding-top: 50px;
+	}
 }

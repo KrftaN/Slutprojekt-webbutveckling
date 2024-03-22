@@ -1,3 +1,12 @@
+body {
+	margin: 0px;
+	color: white;
+	background-color: #1e2023;
+	font-family: "Fira Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .wrapper {
 	display: grid;
 	grid-template-areas:
@@ -8,11 +17,10 @@
 header {
 	grid-area: header; /* Placerar elementet i grid-området "header". */
 	background-color: black; /* Anger bakgrundsfärg. */
-	display: grid;
+	display: flex;
 }
 
 header h1 {
-	display: flex;
 	justify-content: center;
 }
 
@@ -23,4 +31,11 @@ header h1 a {
 
 main {
 	grid-area: main; /* Placerar elementet i grid-området "header". */
+}
+
+footer {
+	grid-area: footer;
+	border-top-style: solid;
+	border-width: 1px;
+	padding: 10px 0;
 }
