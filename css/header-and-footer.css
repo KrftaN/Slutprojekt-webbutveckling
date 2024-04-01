@@ -1,0 +1,91 @@
+header {
+	grid-area: header; /* Placerar elementet i grid-området "header". */
+	z-index: 1;
+	border-bottom-style: solid;
+	border-width: 1px;
+}
+
+.header-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	place-items: center; /* Center content both horizontally and vertically */
+}
+
+header h1 {
+	padding-right: 30px;
+}
+
+footer section:nth-child(1) a,
+header h1 a {
+	text-decoration: none;
+	color: #faf9f6;
+	position: relative;
+	padding: 10px;
+}
+footer a::before,
+header h1 a::before {
+	background: hsl(45 100% 70%);
+	content: "";
+	inset: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s ease-in-out;
+	z-index: -1;
+}
+footer a:hover::before,
+header h1 a:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+header img {
+	height: 6vh;
+}
+
+footer {
+	grid-area: footer;
+	display: grid;
+	grid-template-rows: 2fr 1fr;
+	border-top-style: solid;
+	border-width: 1px;
+}
+
+footer section:nth-child(1) {
+	background-color: #1e2023;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer section:nth-child(1) > img {
+	height: 5vh;
+}
+
+footer section:nth-child(1) > ul {
+	list-style-type: none;
+}
+footer section:nth-child(1) > ul > li {
+	display: inline;
+	padding: 50px;
+}
+
+footer section:nth-child(1) a {
+	text-decoration: none;
+	position: relative;
+	color: #faf9f6;
+}
+
+footer section:nth-child(2) {
+	background-color: #0f1012;
+	text-align: center;
+}
+
+/* a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+	color: #1e2023;
+}
+ */

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sv">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/header-and-footer.css" />
+		<link rel="stylesheet" href="../css/favourite-song-styles.css" />
+		<link rel="stylesheet" href="../css/dropdown-nav.css" />
+		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
+		<script src="../scripts/navbar.js" defer></script>
+		<title>Hem | Musiksidan</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<ul>
+						<li><a href="../index.html">Hemsida</a></li>
+						<li><a href="#">Genre</a></li>
+						<li><a href="#">Musikhistoria</a></li>
+						<li><a href="./favourite-song.html">Favoritlåt</a></li>
+					</ul>
+				</nav>
+				<div class="header-wrapper">
+					<div class="menu-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+
+					<h1><a href="../index.html">Musiksidan</a></h1>
+
+					<img src="../src/img/logo-white.png" alt="Vår logotyp" />
+				</div>
+			</header>
+
+			<main>
+				<form method="post" action="#">
+					<h2>Favoritlåt</h2>
+
+					<fieldset class="credentials">
+						<legend>Personuppgifter</legend>
+						<label for="name">Namn:*</label><br />
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Ditt namn"
+							required
+						/><br />
+						<label for="email">Email:*</label><br />
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Ditt e-post"
+							required
+						/><br />
+						<label for="password">Lösenord:*</label><br />
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="Ditt lösenord"
+							required
+						/><br />
+						<label for="telephone">Telefonnummer:*</label><br />
+						<input
+							type="tel"
+							id="telephone"
+							name="telephone"
+							pattern="^(([+]46)\s*(7)|07)[02369]\s*(\d{4})\s*(\d{3})$"
+							placeholder="070 123 45 67"
+							required
+						/><br />
+					</fieldset>
+					<fieldset class="song">
+						<legend>Låt</legend>
+						<label for="songName">Namn:*</label><br />
+						<input
+							type="text"
+							id="songName"
+							name="songName"
+							placeholder="Låtens namn"
+							required
+						/><br />
+						<label for="bandName">Bandets/artistens namn:*</label><br />
+						<input
+							type="text"
+							id="songName"
+							name="songName"
+							placeholder="Låtens namn"
+							required
+						/><br />
+						<label for="genre">Låtgenre</label><br />
+						<select id="genre" name="genre" required>
+							<optgroup label="Rock">
+								<option value="alternative_rock">Alternative Rock</option>
+								<option value="classic_rock">Classic Rock</option>
+								<option value="punk_rock">Punk Rock</option>
+								<option value="hard_rock">Hard Rock</option>
+								<option value="indie_rock">Indie Rock</option>
+								<option value="progressive_rock">Progressive Rock</option>
+							</optgroup>
+							<optgroup label="Metal">
+								<option value="heavy_metal">Heavy Metal</option>
+								<option value="thrash_metal">Thrash Metal</option>
+								<option value="glam_metal">Glam Metal</option>
+								<option value="progressive_metal">Progressive Metal</option>
+								<option value="death_metal">Death Metal</option>
+								<option value="black_metal">Black Metal</option>
+							</optgroup>
+							<optgroup label="Pop">
+								<option value="pop_rock">Pop Rock</option>
+								<option value="synthpop">Synthpop</option>
+								<option value="dance_pop">Dance-pop</option>
+								<option value="electropop">Electropop</option>
+								<option value="bubblegum_pop">Bubblegum Pop</option>
+								<option value="power_pop">Power Pop</option>
+							</optgroup>
+							<optgroup label="Hip Hop/Rap">
+								<option value="east_coast_hip_hop">East Coast Hip Hop</option>
+								<option value="west_coast_hip_hop">West Coast Hip Hop</option>
+								<option value="gangsta_rap">Gangsta Rap</option>
+								<option value="trap">Trap</option>
+								<option value="old_school_hip_hop">Old School Hip Hop</option>
+								<option value="boom_bap">Boom Bap</option>
+							</optgroup>
+							<optgroup label="Electronic">
+								<option value="house">House</option>
+								<option value="techno">Techno</option>
+								<option value="trance">Trance</option>
+								<option value="dubstep">Dubstep</option>
+								<option value="drum_and_bass">Drum and Bass</option>
+								<option value="ambient">Ambient</option>
+								<option value="synthwave">Synthwave</option>
+							</optgroup>
+							<optgroup label="Jazz">
+								<option value="swing">Swing</option>
+								<option value="bebop">Bebop</option>
+								<option value="cool_jazz">Cool Jazz</option>
+								<option value="fusion_jazz">Fusion Jazz</option>
+								<option value="latin_jazz">Latin Jazz</option>
+								<option value="smooth_jazz">Smooth Jazz</option>
+							</optgroup>
+							<optgroup label="Country">
+								<option value="bluegrass">Bluegrass</option>
+								<option value="honky_tonk">Honky Tonk</option>
+								<option value="country_pop">Country Pop</option>
+								<option value="outlaw_country">Outlaw Country</option>
+								<option value="americana">Americana</option>
+								<option value="western_swing">Western Swing</option>
+							</optgroup>
+							<optgroup label="Reggae">
+								<option value="roots_reggae">Roots Reggae</option>
+								<option value="dancehall">Dancehall</option>
+								<option value="dub">Dub</option>
+								<option value="ska">Ska</option>
+								<option value="rocksteady">Rocksteady</option>
+							</optgroup>
+							<optgroup label="Blues">
+								<option value="delta_blues">Delta Blues</option>
+								<option value="chicago_blues">Chicago Blues</option>
+								<option value="electric_blues">Electric Blues</option>
+								<option value="jump_blues">Jump Blues</option>
+								<option value="soul_blues">Soul Blues</option>
+							</optgroup>
+							<optgroup label="Folk">
+								<option value="americana_folk">Americana</option>
+								<option value="singer_songwriter">Singer-Songwriter</option>
+								<option value="celtic_folk">Celtic Folk</option>
+								<option value="world_folk">World Folk</option>
+								<option value="indie_folk">Indie Folk</option>
+							</optgroup>
+							<optgroup label="Classical">
+								<option value="baroque">Baroque</option>
+								<option value="romantic">Romantic</option>
+								<option value="classical_period">Classical Period</option>
+								<option value="contemporary_classical">
+									Contemporary Classical
+								</option>
+								<option value="opera">Opera</option>
+								<option value="symphony">Symphony</option>
+							</optgroup>
+							<optgroup label="R&B/Soul">
+								<option value="motown">Motown</option>
+								<option value="funk">Funk</option>
+								<option value="neo_soul">Neo Soul</option>
+								<option value="contemporary_rnb">Contemporary R&B</option>
+								<option value="gospel">Gospel</option>
+							</optgroup>
+							<optgroup label="World">
+								<option value="african">African</option>
+								<option value="latin">Latin</option>
+								<option value="celtic">Celtic</option>
+								<option value="indian">Indian</option>
+								<option value="middle_eastern">Middle Eastern</option>
+								<option value="asian">Asian</option>
+							</optgroup>
+						</select>
+					</fieldset>
+					<input type="submit" value="Skicka" />
+				</form>
+			</main>
+
+			<footer>
+				<section>
+					<img src="../src/img/logo-white.png" />
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="favourite-song.html">Genre</a></li>
+						<li><a href="favourite-song.html">Musikhistoria</a></li>
+						<li><a href="favourite-song.html">Favoritlåt</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Copyright ©2024 | Designad av Malte Elwhagen</p>
+				</section>
+			</footer>
+		</div>
+	</body>
+</html>

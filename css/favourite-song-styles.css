@@ -1,0 +1,116 @@
+@font-face {
+	font-family: "poppinsregular";
+	src: url("../src/webkit/poppins-regular-webfont.woff2") format("woff2"),
+		url("../src/webkit/poppins-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	color: #faf9f6;
+	background-color: #1e2023;
+	font-family: poppinsregular;
+	margin: 0px;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+
+main {
+	grid-area: main; /* Placerar elementet i grid-området "header". */
+	height: 98vh;
+	background: rgba(30, 32, 35, 0.7) url("../src/img/vinyl.jpg") center/cover;
+	display: grid;
+	place-items: center;
+}
+
+form {
+	border-style: solid;
+	border-radius: 10px;
+	box-shadow: 12px 10px 2px 1px rgba(15, 16, 18, 0.5);
+	border-color: #1e2023;
+	background-color: #1e2023;
+	width: 40vw;
+	margin: auto; /* Center the form horizontally */
+	padding: 20px; /* Add some padding for spacing */
+	display: grid;
+	grid-template-areas:
+		"title title"
+		"credentials song"
+		"submit submit";
+	grid-template-columns: 1fr 1fr; /* Assuming you want two columns */
+	gap: 20px;
+}
+
+form > h2 {
+	text-align: center;
+	grid-area: title;
+}
+
+form > fieldset.credentials {
+	grid-area: credentials;
+}
+
+form > fieldset.song {
+	grid-area: song;
+}
+
+form input {
+	transition: border-color 0.7s ease;
+	width: 15vw;
+	height: 3vh;
+	margin-bottom: 15px;
+	color: #faf9f6;
+	background-color: #1e2023;
+	border-radius: 10px;
+}
+
+form input:focus {
+	border-color: green;
+	outline: none;
+}
+
+form input:valid {
+	border-color: green;
+}
+
+form input:user-valid {
+	border-color: green;
+}
+
+form input:user-invalid {
+	border-color: red;
+}
+
+form input[type="submit"] {
+	grid-area: submit;
+	width: 250px;
+	height: 40px;
+	border-radius: 20px;
+	border-style: none;
+	font-size: 20px;
+	background-color: #faf9f6;
+	color: #1e2023;
+	cursor: pointer;
+	margin: auto; /* Center the submit button horizontally */
+}
+
+select {
+	width: 15vw;
+	height: 5vh;
+	padding: 0.675em 6em 0.675em 1em;
+	background-color: #1e2023;
+	border: 1px solid #faf9f6;
+	border-radius: 10px;
+	color: #faf9f6;
+	cursor: pointer;
+}
+
+form fieldset {
+	margin-bottom: 20px; /* Add some space between fieldsets */
+}

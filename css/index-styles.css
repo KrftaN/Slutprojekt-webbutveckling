@@ -1,0 +1,76 @@
+@font-face {
+	font-family: "poppinsregular";
+	src: url("../src/webkit/poppins-regular-webfont.woff2") format("woff2"),
+		url("../src/webkit/poppins-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	color: white;
+	background-color: #1e2023;
+	font-family: poppinsregular;
+	margin: 0px;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+
+main {
+	grid-area: main; /* Placerar elementet i grid-området "header". */
+}
+
+main > section:nth-child(1) {
+	height: 95vh;
+	background-image: url("../src/img/concert-cover.jpg");
+	background-size: cover;
+	background-position: center;
+	display: grid; /* Use grid container */
+	place-items: center; /* Center content both horizontally and vertically */
+}
+
+main > section:nth-child(1) > h2 {
+	cursor: pointer;
+	color: rgba(30, 32, 35, 0.9);
+	margin: 0;
+	padding: 20px;
+	border-radius: 15px;
+	border-style: outset;
+	background-color: rgba(227, 150, 62, 0.5);
+	backdrop-filter: blur(13px);
+	box-shadow: 8px 8px 2px rgba(255, 255, 255, 0.5);
+	transition: all 0.3s ease;
+}
+
+main > section:nth-child(1) > h2:hover {
+	box-shadow: 8px 8px 2px white;
+	background-color: rgba(227, 150, 62, 0.9);
+	color: white;
+}
+
+main > section:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	place-items: center; /* Center content both horizontally and vertically */
+	height: 60vh;
+	padding: 20px;
+	gap: 30px;
+	text-align: center;
+}
+
+main > section:nth-child(3) {
+	height: 90vh;
+	background-image: url("../src/img/gitarr.jpg");
+	background-size: cover;
+	background-position: center;
+	opacity: 1;
+}
+
+main > section:nth-child(3) > h2 {
+	margin: 0px;
+}
