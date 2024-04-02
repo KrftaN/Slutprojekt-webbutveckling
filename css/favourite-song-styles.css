@@ -87,7 +87,7 @@ form input:user-invalid {
 	border-color: red;
 }
 
-form input[type="submit"] {
+input[type="submit"] {
 	grid-area: submit;
 	width: 250px;
 	height: 40px;
@@ -96,6 +96,18 @@ form input[type="submit"] {
 	font-size: 20px;
 	background-color: #faf9f6;
 	color: #1e2023;
+	cursor: pointer;
+	margin: auto; /* Center the submit button horizontally */
+}
+
+form fieldset.radio {
+	display: flex; /* Change display to flex for horizontal layout */
+	align-items: center; /* Center align items vertically */
+}
+
+input[type="radio"] {
+	width: 20px;
+	height: 20px;
 	cursor: pointer;
 	margin: auto; /* Center the submit button horizontally */
 }

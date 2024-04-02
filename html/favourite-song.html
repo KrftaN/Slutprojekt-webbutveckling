@@ -87,13 +87,14 @@
 						<label for="bandName">Bandets/artistens namn:*</label><br />
 						<input
 							type="text"
-							id="songName"
-							name="songName"
-							placeholder="Låtens namn"
+							id="bandName"
+							name="bandName"
+							placeholder="Bandets namn"
 							required
 						/><br />
-						<label for="genre">Låtgenre</label><br />
+						<label for="genre">Låtgenre:*</label><br />
 						<select id="genre" name="genre" required>
+							<option value="">Välj en genre</option>
 							<optgroup label="Rock">
 								<option value="alternative_rock">Alternative Rock</option>
 								<option value="classic_rock">Classic Rock</option>
@@ -198,6 +199,18 @@
 								<option value="asian">Asian</option>
 							</optgroup>
 						</select>
+
+						<fieldset class="radio">
+							<legend>När släptes låten?</legend>
+							<input type="radio" id="huey" name="drone" value="huey" checked />
+							<label for="huey">1900-1950</label>
+
+							<input type="radio" id="dewey" name="drone" value="dewey" />
+							<label for="dewey">1950-1980</label>
+
+							<input type="radio" id="louie" name="drone" value="louie" />
+							<label for="louie">1980-2020</label>
+						</fieldset>
 					</fieldset>
 					<input type="submit" value="Skicka" />
 				</form>
@@ -205,7 +218,7 @@
 
 			<footer>
 				<section>
-					<img src="../src/img/logo-white.png" />
+					<img src="../src/img/logo-white.png" alt="Logotyp" />
 					<ul>
 						<li><a href="../index.html">Home</a></li>
 						<li><a href="favourite-song.html">Genre</a></li>

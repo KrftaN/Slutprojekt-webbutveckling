@@ -17,6 +17,7 @@ header h1 {
 
 footer section:nth-child(1) a,
 header h1 a {
+	z-index: 1;
 	text-decoration: none;
 	color: #faf9f6;
 	position: relative;
@@ -68,12 +69,6 @@ footer section:nth-child(1) > ul {
 footer section:nth-child(1) > ul > li {
 	display: inline;
 	padding: 50px;
-}
-
-footer section:nth-child(1) a {
-	text-decoration: none;
-	position: relative;
-	color: #faf9f6;
 }
 
 footer section:nth-child(2) {
