@@ -1,8 +1,6 @@
 header {
 	grid-area: header; /* Placerar elementet i grid-området "header". */
 	z-index: 1;
-	border-bottom-style: solid;
-	border-width: 1px;
 }
 
 .header-wrapper {
@@ -48,8 +46,6 @@ footer {
 	grid-area: footer;
 	display: grid;
 	grid-template-rows: 2fr 1fr;
-	border-top-style: solid;
-	border-width: 1px;
 }
 
 footer section:nth-child(1) {

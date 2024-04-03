@@ -79,15 +79,11 @@ form input:valid {
 	border-color: green;
 }
 
-form input:user-valid {
-	border-color: green;
-}
-
-form input:user-invalid {
+form input:invalid {
 	border-color: red;
 }
 
-input[type="submit"] {
+form input[type="submit"] {
 	grid-area: submit;
 	width: 250px;
 	height: 40px;
@@ -105,7 +101,7 @@ form fieldset.radio {
 	align-items: center; /* Center align items vertically */
 }
 
-input[type="radio"] {
+form input[type="radio"] {
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
