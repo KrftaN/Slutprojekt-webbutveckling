@@ -43,8 +43,9 @@ form {
 		"title title"
 		"credentials song"
 		"submit submit";
-	grid-template-columns: 1fr 1fr; /* Assuming you want two columns */
+	grid-template-columns: 1fr 1fr;
 	gap: 20px;
+	user-select: none; /*Detta undviker den fula blåa markeringer som händer om en användare trycker på labels istället för knappar*/
 }
 
 form > h2 {
@@ -61,9 +62,9 @@ form > fieldset.song {
 }
 
 form input {
-	transition: border-color 0.7s ease;
+	transition: border-color 0.9s ease;
 	width: 15vw;
-	height: 3vh;
+	height: 25px;
 	margin-bottom: 15px;
 	color: #faf9f6;
 	background-color: #1e2023;
@@ -75,16 +76,77 @@ form input:focus {
 	outline: none;
 }
 
+select:valid,
 form input:valid {
 	border-color: green;
 }
 
+select:invalid,
 form input:invalid {
 	border-color: red;
 }
 
-form input[type="submit"] {
+form fieldset.radio {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+form fieldset.radio .radio-group {
+	display: flex;
+	align-items: center;
+}
+
+form input[type="radio"] {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin: auto;
+}
+
+form select {
+	transition: border-color 0.9s ease;
+	width: 15vw;
+	height: 40px;
+	padding: 0.675em 6em 0.675em 1em;
+	background-color: #1e2023;
+	border: 1px solid #faf9f6;
+	border-radius: 10px;
+	color: #faf9f6;
+	cursor: pointer;
+}
+
+form textarea {
+	resize: none;
+	width: 15vw;
+	color: #faf9f6;
+	background-color: #1e2023;
+	outline: none;
+}
+
+form .submit {
 	grid-area: submit;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+.acceptTerms {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.acceptTerms > label {
+	padding-left: 10px;
+}
+
+form input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+	margin: 0px;
+}
+
+form input[type="submit"] {
 	width: 250px;
 	height: 40px;
 	border-radius: 20px;
@@ -96,29 +158,104 @@ form input[type="submit"] {
 	margin: auto; /* Center the submit button horizontally */
 }
 
-form fieldset.radio {
-	display: flex; /* Change display to flex for horizontal layout */
-	align-items: center; /* Center align items vertically */
+/* Add new CSS for responsive layout */
+
+@media screen and (max-width: 2000px) {
+	form fieldset.radio {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
 }
 
-form input[type="radio"] {
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-	margin: auto; /* Center the submit button horizontally */
+@media screen and (max-width: 1300px) {
+	main {
+		height: 80vh;
+	}
+
+	form {
+		gap: 10px;
+		width: 55vw;
+	}
+
+	form textarea {
+		width: 20vw;
+	}
+
+	form input {
+		width: 20vw;
+	}
+
+	form select {
+		width: 21vw;
+	}
+
+	form fieldset.radio {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		place-items: center;
+	}
+
+	form input[type="radio"] {
+		width: 20px;
+		height: 20px;
+		margin: 0px;
+	}
 }
 
-select {
-	width: 15vw;
-	height: 5vh;
-	padding: 0.675em 6em 0.675em 1em;
-	background-color: #1e2023;
-	border: 1px solid #faf9f6;
-	border-radius: 10px;
-	color: #faf9f6;
-	cursor: pointer;
+@media screen and (max-width: 900px) {
+	main {
+		height: 128vh;
+	}
+
+	form textarea {
+		width: 27vw;
+	}
+
+	form input {
+		width: 27vw;
+	}
+
+	form select {
+		width: 28vw;
+	}
+
+	form {
+		width: 55vw;
+		grid-template-areas:
+			"title"
+			"credentials"
+			"song"
+			"submit";
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
 }
 
-form fieldset {
-	margin-bottom: 20px; /* Add some space between fieldsets */
+@media screen and (max-width: 500px) {
+	main {
+		height: 120vh;
+	}
+
+	form textarea {
+		width: 40vw;
+	}
+
+	form input {
+		width: 40vw;
+	}
+
+	form select {
+		width: 40vw;
+	}
+
+	form {
+		width: 80vw;
+		grid-template-areas:
+			"title"
+			"credentials"
+			"song"
+			"submit";
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
 }
