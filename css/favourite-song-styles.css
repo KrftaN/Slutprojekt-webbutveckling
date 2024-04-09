@@ -10,7 +10,7 @@ body {
 	color: #faf9f6;
 	background-color: #1e2023;
 	font-family: poppinsregular;
-	margin: 0px;
+	margin: 0;
 }
 
 .wrapper {
@@ -25,8 +25,7 @@ main {
 	grid-area: main; /* Placerar elementet i grid-området "header". */
 	height: 98vh;
 	background: rgba(30, 32, 35, 0.7) url("../src/img/vinyl.jpg") center/cover;
-	display: grid;
-	place-items: center;
+	display: flex;
 }
 
 form {
@@ -55,17 +54,20 @@ form > h2 {
 
 form > fieldset.credentials {
 	grid-area: credentials;
+	display: grid;
+	gap: 8px;
 }
 
 form > fieldset.song {
 	grid-area: song;
+	display: grid;
+	gap: 8px;
 }
 
 form input {
 	transition: border-color 0.9s ease;
 	width: 15vw;
 	height: 25px;
-	margin-bottom: 15px;
 	color: #faf9f6;
 	background-color: #1e2023;
 	border-radius: 10px;
@@ -87,10 +89,9 @@ form input:invalid {
 }
 
 form fieldset.radio {
+	width: 13vw;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	margin-top: 15px;
-	margin-bottom: 15px;
 }
 
 form fieldset.radio .radio-group {
@@ -98,16 +99,19 @@ form fieldset.radio .radio-group {
 	align-items: center;
 }
 
+form fieldset.radio label {
+	cursor: pointer;
+}
+
 form input[type="radio"] {
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
-	margin: auto;
 }
 
 form select {
 	transition: border-color 0.9s ease;
-	width: 15vw;
+	width: 16vw;
 	height: 40px;
 	padding: 0.675em 6em 0.675em 1em;
 	background-color: #1e2023;
@@ -137,13 +141,13 @@ form .submit {
 	align-items: center;
 }
 .acceptTerms > label {
-	padding-left: 10px;
+	padding: 5px;
+	cursor: pointer;
 }
 
 form input[type="checkbox"] {
 	width: 25px;
 	height: 25px;
-	margin: 0px;
 }
 
 form input[type="submit"] {
@@ -155,7 +159,30 @@ form input[type="submit"] {
 	background-color: #faf9f6;
 	color: #1e2023;
 	cursor: pointer;
-	margin: auto; /* Center the submit button horizontally */
+	display: flex;
+	justify-self: center;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+form input[type="submit"] {
+	width: 250px;
+	height: 40px;
+	border-radius: 20px;
+	border-style: none;
+	font-size: 20px;
+	background-color: #faf9f6;
+	color: #1e2023;
+	cursor: pointer;
+	display: flex;
+	justify-self: center;
+	transition: transform 0.3s;
+}
+
+form input[type="submit"]:hover {
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+	transform: scale(1.1);
+	background-color: #1e2023;
+	color: #faf9f6;
 }
 
 /* Add new CSS for responsive layout */
@@ -190,6 +217,7 @@ form input[type="submit"] {
 	}
 
 	form fieldset.radio {
+		width: 19vw;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(3, 1fr);
 		place-items: center;
@@ -198,7 +226,6 @@ form input[type="submit"] {
 	form input[type="radio"] {
 		width: 20px;
 		height: 20px;
-		margin: 0px;
 	}
 }
 
@@ -207,16 +234,26 @@ form input[type="submit"] {
 		height: 128vh;
 	}
 
-	form textarea {
-		width: 27vw;
-	}
-
 	form input {
 		width: 27vw;
+		display: flex;
+		justify-self: center;
 	}
 
 	form select {
 		width: 28vw;
+		display: flex;
+		justify-self: center;
+	}
+
+	form textarea {
+		width: 27vw;
+		display: flex;
+		justify-self: center;
+	}
+
+	form fieldset.radio {
+		margin: auto;
 	}
 
 	form {

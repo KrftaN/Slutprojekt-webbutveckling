@@ -7,7 +7,7 @@
 }
 
 body {
-	color: white;
+	color: #faf9f6;
 	background-color: #1e2023;
 	font-family: poppinsregular;
 	margin: 0px;
@@ -48,9 +48,9 @@ main > section:nth-child(1) > h2 {
 }
 
 main > section:nth-child(1) > h2:hover {
-	box-shadow: 8px 8px 2px white;
+	box-shadow: 8px 8px 2px #faf9f6;
 	background-color: rgba(227, 150, 62, 0.9);
-	color: white;
+	color: #faf9f6;
 }
 
 main > section:nth-child(2) {
@@ -65,12 +65,45 @@ main > section:nth-child(2) {
 
 main > section:nth-child(3) {
 	height: 90vh;
-	background-image: url("../src/img/gitarr.jpg");
+	background-image: url("../src/img/guitar.jpg");
 	background-size: cover;
 	background-position: center;
-	opacity: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
-main > section:nth-child(3) > h2 {
-	margin: 0px;
+main > section:nth-child(3) section {
+	backdrop-filter: blur(10px);
+}
+main > section:nth-child(3) section:nth-child(1) {
+	background: linear-gradient(45deg, rgba(15, 16, 18, 0.8), rgba(30, 32, 35, 0.8));
+	padding: 20px;
+	text-align: center;
+}
+
+main > section:nth-child(3) section:nth-child(1) > p {
+	padding-bottom: 5vh;
+}
+
+main > section:nth-child(4) {
+	height: 90vh;
+	background-image: url("../src/img/black-and-white-concert.jpg");
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+main > section:nth-child(4) section {
+	backdrop-filter: blur(7px);
+}
+
+main > section:nth-child(4) section:nth-child(2) {
+	background: linear-gradient(45deg, rgba(15, 16, 18, 0.8), rgba(30, 32, 35, 0.8));
+	padding: 20px;
+	text-align: center;
+}
+
+main > section:nth-child(4) section:nth-child(2) > p {
+	padding-bottom: 5vh;
 }
