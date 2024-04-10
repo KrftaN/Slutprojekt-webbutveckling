@@ -10,7 +10,11 @@ body {
 	color: #faf9f6;
 	background-color: #1e2023;
 	font-family: poppinsregular;
-	margin: 0px;
+	margin: 0;
+}
+
+p {
+	line-height: 1.7;
 }
 
 .wrapper {
@@ -64,7 +68,7 @@ main > section:nth-child(2) {
 }
 
 main > section:nth-child(3) {
-	height: 90vh;
+	height: 65vh;
 	background-image: url("../src/img/guitar.jpg");
 	background-size: cover;
 	background-position: center;
@@ -86,7 +90,7 @@ main > section:nth-child(3) section:nth-child(1) > p {
 }
 
 main > section:nth-child(4) {
-	height: 90vh;
+	height: 65vh;
 	background-image: url("../src/img/black-and-white-concert.jpg");
 	background-size: cover;
 	background-position: center;
