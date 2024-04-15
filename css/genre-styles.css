@@ -1,0 +1,61 @@
+@font-face {
+	font-family: "poppinsregular";
+	src: url("../src/webkits/poppins-webkit/poppins-regular-webfont.woff2") format("woff2"),
+		url("../src/webkits/poppins-webkit/poppins-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "bebasneue";
+	src: url("../src/webkits/bebasnueue-webkit/bebasneue-regular-webfont.woff2") format("woff2"),
+		url("../src/webkits/bebasnueue-webkit/bebasneue-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	color: #faf9f6;
+	background-color: #1e2023;
+	font-family: poppinsregular;
+	margin: 0;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+
+main {
+	grid-area: main; /* Placerar elementet i grid-området "header". */
+}
+
+main section:nth-child(1) {
+	height: 92vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgb(211, 86, 22);
+	background: linear-gradient(
+		60deg,
+		rgba(211, 86, 22, 1) 4%,
+		rgba(103, 46, 41, 0.9) 45%,
+		rgba(252, 174, 76, 1) 95%
+	);
+}
+
+main section:nth-child(1) > h2 {
+	margin: 0;
+	font-size: 35vw; /* Adjust this value as needed */
+	letter-spacing: 5vw;
+	text-align: center;
+	font-family: bebasneue;
+}
+
+main section:nth-child(2) {
+	height: 80vh;
+	background-color: white;
+}
