@@ -73,6 +73,17 @@ form input {
 	border-radius: 10px;
 }
 
+/* Tar bort pilarna på input[type="number"] för Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+/* För Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
 form input:focus {
 	border-color: green;
 	outline: none;
@@ -175,7 +186,7 @@ form input[type="submit"] {
 	cursor: pointer;
 	display: flex;
 	justify-self: center;
-	transition: transform 0.3s;
+	transition: transform 0.4s, background-color 0.3s, color 0.3s;
 }
 
 form input[type="submit"]:hover {
