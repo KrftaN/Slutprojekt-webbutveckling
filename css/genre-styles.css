@@ -33,7 +33,7 @@ main {
 	grid-area: main; /* Placerar elementet i grid-området "header". */
 }
 
-main section:nth-child(1) {
+main > section:nth-child(1) {
 	height: 92vh;
 	display: flex;
 	justify-content: center;
@@ -56,6 +56,21 @@ main section:nth-child(1) > h2 {
 }
 
 main section:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	height: 80vh;
-	background-color: white;
+}
+
+main section:nth-child(2) section:nth-child(1) {
+	background-image: url("../src/img/pop.jpg");
+	background-size: cover;
+	background-position: left center;
+}
+
+main section:nth-child(2) section:nth-child(2) {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px;
 }
