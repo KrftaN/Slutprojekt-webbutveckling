@@ -28,6 +28,15 @@ body {
 		"main"
 		"footer";
 }
+p {
+	line-height: 1.7;
+	padding: 10px;
+	margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
 
 main {
 	grid-area: main; /* Placerar elementet i grid-området "header". */
@@ -38,16 +47,10 @@ main > section:nth-child(1) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgb(211, 86, 22);
-	background: linear-gradient(
-		60deg,
-		rgba(211, 86, 22, 1) 4%,
-		rgba(103, 46, 41, 0.9) 45%,
-		rgba(252, 174, 76, 1) 95%
-	);
+	background-image: linear-gradient(to right, rgb(242, 112, 156), rgb(255, 148, 114));
 }
 
-main section:nth-child(1) > h2 {
+main > section > h2 {
 	margin: 0;
 	font-size: 35vw; /* Adjust this value as needed */
 	letter-spacing: 5vw;
@@ -58,19 +61,100 @@ main section:nth-child(1) > h2 {
 main section:nth-child(2) {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	height: 80vh;
+	height: 800px;
 }
 
-main section:nth-child(2) section:nth-child(1) {
+main section:nth-child(2) > section {
 	background-image: url("../src/img/pop.jpg");
 	background-size: cover;
 	background-position: left center;
 }
 
-main section:nth-child(2) section:nth-child(2) {
+main section:nth-child(2) article {
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding: 20px;
+}
+
+main section:nth-child(2) article p {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+main section:nth-child(3) {
+	height: 800px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	background-color: #0f1012;
+}
+
+main section:nth-child(2) article p {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+main section:nth-child(3) > section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	flex-direction: column;
+}
+
+main section:nth-child(3) > figure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main section:nth-child(3) section > h2 {
+	font-size: 35px;
+}
+main section:nth-child(3) > section > ol {
+	display: grid;
+	gap: 10px;
+}
+
+main section:nth-child(3) > figure > img {
+	height: 600px;
+	border-radius: 15px;
+	box-shadow: rgba(253, 223, 93, 0.45) 0px 22px 70px 4px;
+}
+
+main section:nth-child(4) {
+	height: 600px;
+	background-image: linear-gradient(to right, #ff9966, #ff5e62);
+	display: grid;
+	place-items: center;
+}
+
+main section:nth-child(5) {
+	height: 500px;
+	background-color: #0f1012;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	place-items: center; /* Center content both horizontally and vertically */
+	height: 550px;
+	gap: 30px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+main section:nth-child(5) p,
+main section:nth-child(5) h2 {
+	text-align: center;
+}
+
+main section:nth-child(5) article {
+	border-style: solid;
+	border-color: #1e2023;
+	border-radius: 10px;
+	height: 350px;
+	padding: 10px;
+	box-shadow: 12px 10px rgba(30, 32, 35, 0.3);
+}
+
+dt {
+	font-weight: bold;
 }

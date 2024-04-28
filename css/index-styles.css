@@ -49,6 +49,7 @@ main > section:nth-child(1) > h2 {
 	backdrop-filter: blur(13px);
 	box-shadow: 8px 8px 2px rgba(255, 255, 255, 0.5);
 	transition: all 0.3s ease;
+	text-align: center;
 }
 
 main > section:nth-child(1) > h2:hover {
@@ -61,14 +62,23 @@ main > section:nth-child(2) {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	place-items: center; /* Center content both horizontally and vertically */
-	height: 60vh;
+	height: 550px;
 	padding: 20px;
 	gap: 30px;
 	text-align: center;
+	margin: 0;
+}
+
+main > section:nth-child(2) h2 {
+	margin: 0px;
+}
+
+main > section:nth-child(2) article {
+	height: 240px;
 }
 
 main > section:nth-child(3) {
-	height: 65vh;
+	height: 600px;
 	background-image: url("../src/img/guitar.jpg");
 	background-size: cover;
 	background-position: center;
@@ -85,12 +95,8 @@ main > section:nth-child(3) section:nth-child(1) {
 	text-align: center;
 }
 
-main > section:nth-child(3) section:nth-child(1) > p {
-	padding-bottom: 5vh;
-}
-
 main > section:nth-child(4) {
-	height: 65vh;
+	height: 600px;
 	background-image: url("../src/img/black-and-white-concert.jpg");
 	background-size: cover;
 	background-position: center;
@@ -108,6 +114,127 @@ main > section:nth-child(4) section:nth-child(2) {
 	text-align: center;
 }
 
-main > section:nth-child(4) section:nth-child(2) > p {
-	padding-bottom: 5vh;
+@media screen and (max-width: 1270px) {
+	main > section:nth-child(2) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	main > section:nth-child(2) section:nth-child(3) {
+		grid-column: span 2;
+	}
+
+	main > section:nth-child(3) {
+		height: 700px;
+
+		grid-template-columns: 1fr 1fr;
+	}
+
+	main > section:nth-child(4) {
+		height: 700px;
+
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 1125px) {
+	main > section:nth-child(3) {
+		grid-template-columns: 60% 1fr;
+	}
+
+	main > section:nth-child(4) {
+		grid-template-columns: 1fr 60%;
+	}
+}
+
+@media screen and (max-width: 910px) {
+	main > section:nth-child(2) {
+		height: 650px;
+	}
+
+	main > section:nth-child(3) {
+		grid-template-columns: 70% 1fr;
+	}
+
+	main > section:nth-child(4) {
+		grid-template-columns: 1fr 70%;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	main > section:nth-child(2) {
+		height: 700px;
+	}
+
+	main > section:nth-child(3) {
+		grid-template-columns: 75% 1fr;
+	}
+
+	main > section:nth-child(4) {
+		grid-template-columns: 1fr 80%;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	main > section:nth-child(2) {
+		height: 1100px;
+		gap: 0;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+	}
+
+	main > section:nth-child(2) section:nth-child(3) {
+		grid-column: 1;
+	}
+
+	main > section:nth-child(3) {
+		height: 700px;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	main > section:nth-child(4) {
+		height: 800px;
+		grid-template-columns: 1fr;
+	}
+
+	main > section:nth-child(4) section:nth-child(1) {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 430px) {
+	main > section:nth-child(2) {
+		height: 1200px;
+	}
+
+	main > section:nth-child(3) {
+		height: 800px;
+	}
+
+	main > section:nth-child(3) section {
+		backdrop-filter: blur(6px);
+	}
+
+	main > section:nth-child(4) {
+		height: 900px;
+	}
+
+	main > section:nth-child(4) section {
+		backdrop-filter: blur(3px);
+	}
+}
+
+@media screen and (max-width: 370px) {
+	main > section:nth-child(2) {
+		height: 1300px;
+	}
+
+	main > section:nth-child(3) {
+		height: 900px;
+	}
+
+	main > section:nth-child(4) {
+		height: 1000px;
+	}
 }

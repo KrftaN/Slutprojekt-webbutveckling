@@ -63,8 +63,8 @@ footer section:nth-child(1) > ul {
 	list-style-type: none;
 }
 footer section:nth-child(1) > ul > li {
+	padding: 5vw;
 	display: inline;
-	padding: 50px;
 }
 
 footer section:nth-child(2) {
@@ -77,6 +77,32 @@ a:visited,
 a:hover,
 a:focus,
 a:active {
-	color: #1e2023;
+	color: inherit;
+} */
+
+@media screen and (max-width: 850px) {
+	footer section:nth-child(1) > ul > li {
+		padding: 4vw;
+	}
 }
- */
+
+@media screen and (max-width: 690px) {
+	footer section:nth-child(1) > ul > li {
+		padding: 2vw;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	footer section:nth-child(1) > ul > li {
+		padding: 1vw;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	footer section:nth-child(1) > ul {
+		padding: 1vw;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+}

@@ -23,7 +23,7 @@ body {
 
 main {
 	grid-area: main; /* Placerar elementet i grid-området "header". */
-	height: 98vh;
+	height: 800px;
 	background: rgba(30, 32, 35, 0.7) url("../src/img/vinyl.jpg") center/cover;
 	display: flex;
 }
@@ -207,7 +207,7 @@ form input[type="submit"]:hover {
 
 @media screen and (max-width: 1300px) {
 	main {
-		height: 80vh;
+		height: 800px;
 	}
 
 	form {
@@ -242,7 +242,7 @@ form input[type="submit"]:hover {
 
 @media screen and (max-width: 900px) {
 	main {
-		height: 128vh;
+		height: 1200px;
 	}
 
 	form input {
@@ -281,7 +281,7 @@ form input[type="submit"]:hover {
 
 @media screen and (max-width: 500px) {
 	main {
-		height: 120vh;
+		height: 1200px;
 	}
 
 	form textarea {
