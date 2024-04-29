@@ -392,11 +392,11 @@ main section:nth-child(7) {
 
 @media screen and (max-width: 500px) {
 	main > section:nth-child(1) {
-		height: 1200px;
+		height: 1000px;
 	}
 
 	.mobileTitle {
-		font-size: 325px; /* Adjust this value as needed */
+		font-size: 280px; /* Adjust this value as needed */
 		letter-spacing: 5vw;
 	}
 
