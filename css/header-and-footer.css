@@ -72,13 +72,21 @@ footer section:nth-child(2) {
 	text-align: center;
 }
 
-/* a:link,
-a:visited,
-a:hover,
-a:focus,
+a:link {
+	color: inherit;
+}
+a:visited {
+	color: inherit;
+}
+a:hover {
+	color: inherit;
+}
+a:focus {
+	color: inherit;
+}
 a:active {
 	color: inherit;
-} */
+}
 
 @media screen and (max-width: 850px) {
 	footer section:nth-child(1) > ul > li {

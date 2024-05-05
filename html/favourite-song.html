@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="sv">
 	<head>
-		<meta charset="UTF-8" >
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<link rel="stylesheet" href="../css/header-and-footer.css" >
-		<link rel="stylesheet" href="../css/favourite-song-styles.css" >
-		<link rel="stylesheet" href="../css/nav.css" >
-		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" >
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/header-and-footer.css" />
+		<link rel="stylesheet" href="../css/favourite-song-styles.css" />
+		<link rel="stylesheet" href="../css/nav.css" />
+		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
 		<script src="../scripts/navbar.js" defer></script>
 		<title>Favoritlåt | Musiksidan</title>
 	</head>
@@ -15,9 +15,9 @@
 			<header>
 				<nav>
 					<ul>
-						<li><a href="../index.html">Hemsida</a></li>
-						<li><a href="./genre.html">Genre</a></li>
-						<li><a href="#">Musikhistoria</a></li>
+						<li><a href="../index.html">Hem</a></li>
+						<li><a href="./genre.html">Genrer</a></li>
+						<li><a href="./artists.html">Artister</a></li>
 						<li><a href="./favourite-song.html">Favoritlåt</a></li>
 					</ul>
 				</nav>
@@ -29,7 +29,7 @@
 					</div>
 
 					<h1><a href="../index.html">Musiksidan</a></h1>
-					<img src="../src/img/logo-white.png" alt="Vår logotyp" >
+					<img src="../src/img/logo-white.png" alt="Vår logotyp" />
 				</div>
 			</header>
 
@@ -47,7 +47,7 @@
 							name="name"
 							placeholder="Ditt namn"
 							required
-						><br >
+						/><br />
 						<label for="email">Email:*</label>
 						<input
 							type="email"
@@ -55,7 +55,7 @@
 							name="email"
 							placeholder="Ditt e-post"
 							required
-						><br >
+						/><br />
 						<label for="password">Lösenord:*</label>
 						<input
 							type="password"
@@ -63,7 +63,7 @@
 							name="password"
 							placeholder="Ditt lösenord"
 							required
-						><br >
+						/><br />
 						<label for="telephone">Telefonnummer:*</label>
 						<input
 							type="tel"
@@ -72,7 +72,7 @@
 							pattern="^(([+]46)\s*(7)|07)[02369]\s*(\d{4})\s*(\d{3})$"
 							placeholder="0701234567"
 							required
-						><br >
+						/><br />
 						<label for="age">Ålder:*</label>
 						<input
 							type="number"
@@ -82,7 +82,7 @@
 							required
 							min="1"
 							max="99"
-						><br >
+						/><br />
 					</fieldset>
 					<fieldset class="song">
 						<legend>Låt</legend>
@@ -93,7 +93,7 @@
 							name="songName"
 							placeholder="Låtens namn"
 							required
-						><br >
+						/><br />
 						<label for="bandName">Bandets/artistens namn:*</label>
 						<input
 							type="text"
@@ -101,7 +101,7 @@
 							name="bandName"
 							placeholder="Bandets namn"
 							required
-						><br >
+						/><br />
 						<label for="genre">Låtgenre:*</label>
 						<select id="genre" name="genre" required>
 							<option value="">Välj en genre</option>
@@ -220,17 +220,17 @@
 									name="option"
 									value="option1"
 									checked
-								>
+								/>
 								<label for="option1">1900-1950</label>
 							</div>
 
 							<div class="radio-group">
-								<input type="radio" id="option2" name="option" value="option2" >
+								<input type="radio" id="option2" name="option" value="option2" />
 								<label for="option2">1950-1980</label>
 							</div>
 
 							<div class="radio-group">
-								<input type="radio" id="option3" name="option" value="option3" >
+								<input type="radio" id="option3" name="option" value="option3" />
 								<label for="option3">1980-2020</label>
 							</div>
 						</fieldset>
@@ -247,28 +247,31 @@
 								name="accept"
 								value="accept"
 								required
+							/>
+							<label for="accept"
+								>Godkänner du våra
+								<a href="./user-agreement.html">användarvillkor?</a></label
 							>
-							<label for="accept">Godkänner du vår integritetspolicy?</label>
 						</div>
 
-						<input type="submit" value="Skicka" >
+						<input type="submit" value="Skicka" />
 					</div>
 				</form>
 			</main>
 
 			<footer>
 				<section>
-					<img src="../src/img/logo-white.png" alt="Logotyp" >
+					<img src="../src/img/logo-white.png" alt="Logotyp" />
 					<ul>
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="./genre.html">Genre</a></li>
-						<li><a href="#">Musikhistoria</a></li>
+						<li><a href="../index.html">Hem</a></li>
+						<li><a href="./genre.html">Genrer</a></li>
+						<li><a href="./artists.html">Artister</a></li>
 						<li><a href="./favourite-song.html">Favoritlåt</a></li>
 					</ul>
 				</section>
 
 				<section>
-					<p>Copyright ©2024 | Designad av Malte Elwhagen</p>
+					<p>Upphovsrätt ©2024 | Designad av Malte Elwhagen</p>
 				</section>
 			</footer>
 		</div>

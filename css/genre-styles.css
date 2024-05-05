@@ -17,7 +17,7 @@
 body {
 	color: #faf9f6;
 	background-color: #1e2023;
-	font-family: poppinsregular;
+	font-family: poppinsregular, "Times New Roman", Times, sans-serif;
 	margin: 0;
 }
 
@@ -51,24 +51,24 @@ main > section:nth-child(1) {
 }
 
 .desktopTitle {
-	font-size: 550px; /* Adjust this value as needed */
-	letter-spacing: 5vw;
+	font-size: 470px; /* Adjust this value as needed */
+	letter-spacing: 4vw;
 	text-align: center;
-	font-family: bebasneue;
+	font-family: bebasneue, "Times New Roman", Times, sans-serif;
 }
 
 .mobileTitle {
 	display: none;
-	font-size: 400px; /* Adjust this value as needed */
-	letter-spacing: 5vw;
+	font-size: 450px; /* Adjust this value as needed */
+	letter-spacing: 6vw;
 	text-align: center;
-	font-family: bebasneue;
+	font-family: bebasneue, "Times New Roman", Times, sans-serif;
 }
 
 main section:nth-child(2) {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	height: 800px;
+	height: auto;
 }
 
 main section:nth-child(2) > section {
@@ -96,11 +96,6 @@ main section:nth-child(3) {
 	background-color: #0f1012;
 }
 
-main section:nth-child(2) article p {
-	padding-left: 40px;
-	padding-right: 40px;
-}
-
 main section:nth-child(3) > section {
 	display: flex;
 	justify-content: center;
@@ -113,10 +108,11 @@ main section:nth-child(3) > figure {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0;
 }
 
 main section:nth-child(3) section > h2 {
-	font-size: 35px;
+	font-size: 3.75ch;
 }
 main section:nth-child(3) > section > ol {
 	display: grid;
@@ -141,7 +137,7 @@ main section:nth-child(5) {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	place-items: center; /* Center content both horizontally and vertically */
-	height: 550px;
+	height: 480px;
 	gap: 30px;
 	padding-left: 50px;
 	padding-right: 50px;
@@ -177,7 +173,7 @@ main section:nth-child(7) {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	place-items: center; /* Center content both horizontally and vertically */
-	height: 300px;
+	height: auto;
 	gap: 30px;
 	padding-left: 50px;
 	padding-right: 50px;
@@ -186,13 +182,8 @@ main section:nth-child(7) {
 
 @media screen and (max-width: 1550px) {
 	.desktopTitle {
-		font-size: 500px; /* Adjust this value as needed */
+		font-size: 390px;
 		letter-spacing: 4vw;
-	}
-
-	main section:nth-child(2) {
-		grid-template-columns: 1fr 55%;
-		height: 900px;
 	}
 
 	main section:nth-child(3) > figure > img {
@@ -205,10 +196,6 @@ main section:nth-child(7) {
 }
 
 @media screen and (max-width: 1400px) {
-	main section:nth-child(2) {
-		height: 900px;
-	}
-
 	main section:nth-child(3) > figure > img {
 		height: 400px;
 	}
@@ -224,12 +211,8 @@ main section:nth-child(7) {
 
 @media screen and (max-width: 1270px) {
 	.desktopTitle {
-		font-size: 450px; /* Adjust this value as needed */
+		font-size: 350px;
 		letter-spacing: 4vw;
-	}
-
-	main section:nth-child(2) {
-		height: 1000px;
 	}
 
 	main section:nth-child(3) > figure > img {
@@ -246,12 +229,12 @@ main section:nth-child(7) {
 }
 @media screen and (max-width: 1140px) {
 	.desktopTitle {
-		font-size: 400px; /* Adjust this value as needed */
+		font-size: 300px;
 		letter-spacing: 4vw;
 	}
 
 	main section:nth-child(2) {
-		height: 1300px;
+		height: auto;
 		grid-template-areas:
 			"txt"
 			"img";
@@ -288,16 +271,12 @@ main section:nth-child(7) {
 	}
 
 	.desktopTitle {
-		font-size: 350px; /* Adjust this value as needed */
+		font-size: 275px;
 		letter-spacing: 3vw;
 	}
 
-	main section:nth-child(2) {
-		height: 1500px;
-	}
-
 	main section:nth-child(3) {
-		height: 800px;
+		height: auto;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr;
 	}
@@ -309,7 +288,7 @@ main section:nth-child(7) {
 
 @media screen and (max-width: 855px) {
 	main > section:nth-child(1) {
-		height: 1300px;
+		height: auto;
 	}
 
 	.desktopTitle {
@@ -339,17 +318,13 @@ main section:nth-child(7) {
 }
 
 @media screen and (max-width: 610px) {
-	main > section:nth-child(1) {
-		height: 1200px;
-	}
-
 	.mobileTitle {
-		font-size: 350px; /* Adjust this value as needed */
+		font-size: 350px;
 		letter-spacing: 5vw;
 	}
 
 	main section:nth-child(2) {
-		height: 1700px;
+		grid-template-rows: 2fr 1fr;
 	}
 
 	main section:nth-child(3) > figure > img {
@@ -376,7 +351,7 @@ main section:nth-child(7) {
 
 @media screen and (max-width: 500px) {
 	.mobileTitle {
-		font-size: 350px; /* Adjust this value as needed */
+		font-size: 350px;
 		letter-spacing: 5vw;
 	}
 
@@ -391,17 +366,9 @@ main section:nth-child(7) {
 }
 
 @media screen and (max-width: 500px) {
-	main > section:nth-child(1) {
-		height: 1000px;
-	}
-
 	.mobileTitle {
-		font-size: 280px; /* Adjust this value as needed */
+		font-size: 280px;
 		letter-spacing: 5vw;
-	}
-
-	main section:nth-child(2) {
-		height: 2000px;
 	}
 
 	main section:nth-child(3) > figure > img {
@@ -428,16 +395,12 @@ main section:nth-child(7) {
 
 @media screen and (max-width: 400px) {
 	.mobileTitle {
-		font-size: 280px; /* Adjust this value as needed */
+		font-size: 255px;
 		letter-spacing: 5vw;
 	}
 
-	main section:nth-child(2) {
-		height: 2100px;
-	}
-
 	main section:nth-child(3) > section {
-		font-size: 12px;
+		font-size: 11px;
 	}
 
 	main section:nth-child(3) > section h2 {
@@ -453,8 +416,12 @@ main section:nth-child(7) {
 	}
 
 	main section:nth-child(5) article {
-		width: 230px;
-		height: 700px;
+		width: 215px;
+		height: 800px;
+	}
+
+	main section:nth-child(5) article:nth-child(2) {
+		height: 550px;
 	}
 
 	main section:nth-child(7) {
