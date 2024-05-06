@@ -3,14 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/header-and-footer.css" />
-		<link rel="stylesheet" href="../css/artists-styles.css" />
-		<link rel="stylesheet" href="../css/nav.css" />
+		<link rel="stylesheet" href="../css/styles.css" />
 		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
 		<script src="../scripts/navbar.js" defer></script>
 		<title>Artister | Musiksidan</title>
 	</head>
-	<body>
+	<body id="artists">
 		<div class="wrapperWithLocal">
 			<header>
 				<nav>
@@ -34,17 +32,142 @@
 
 			<nav class="localNav">
 				<ul>
-					<li><a href="#test">test</a></li>
-					<li><a href="#test">test</a></li>
-					<li><a href="#test">test</a></li>
+					<li><a href="#video">Video</a></li>
+					<li><a href="#text">Text</a></li>
+					<li><a href="#table">Tabell</a></li>
 				</ul>
 			</nav>
 
 			<main>
-				<section>
+				<section id="video">
 					<video autoplay loop muted>
 						<source src="../src/media/banner-video.mp4" />
 					</video>
+				</section>
+
+				<section id="text">
+					<article>
+						<h2>Titel</h2>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
+							nihil soluta iusto nostrum possimus vero repellat, ipsam distinctio
+							ullam delectus accusamus! Ullam repudiandae, iste voluptatum quidem
+							dolorem id natus. Accusamus?
+						</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
+							nihil soluta iusto nostrum possimus vero repellat, ipsam distinctio
+							ullam delectus accusamus! Ullam repudiandae, iste voluptatum quidem
+							dolorem id natus. Accusamus?
+						</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
+							nihil soluta iusto nostrum possimus vero repellat, ipsam distinctio
+							ullam delectus accusamus! Ullam repudiandae, iste voluptatum quidem
+							dolorem id natus. Accusamus? Lorem ipsum, dolor sit amet consectetur
+							adipisicing elit. Exercitationem nihil soluta iusto nostrum possimus
+							vero repellat, ipsam distinctio ullam delectus accusamus! Ullam
+							repudiandae, iste voluptatum quidem dolorem id natus. Accusamus?
+						</p>
+					</article>
+					<article>
+						<h2>Titel</h2>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
+							nihil soluta iusto nostrum possimus vero repellat, ipsam distinctio
+							ullam delectus accusamus! Ullam repudiandae, iste voluptatum quidem
+							dolorem id natus. Accusamus?
+						</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
+							nihil soluta iusto nostrum possimus vero repellat, ipsam distinctio
+							ullam delectus accusamus! Ullam repudiandae, iste voluptatum quidem
+							dolorem id natus. Accusamus?
+						</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
+							nihil soluta iusto nostrum possimus vero repellat, ipsam distinctio
+							ullam delectus accusamus! Ullam repudiandae, iste voluptatum quidem
+							dolorem id natus. Accusamus? Lorem ipsum, dolor sit amet consectetur
+							adipisicing elit. Exercitationem nihil soluta iusto nostrum possimus
+							vero repellat, ipsam distinctio ullam delectus accusamus! Ullam
+							repudiandae, iste voluptatum quidem dolorem id natus. Accusamus?
+						</p>
+					</article>
+				</section>
+
+				<section id="table">
+					<table>
+						<caption>
+							Artister
+						</caption>
+						<thead>
+							<tr>
+								<th>Artistnamn</th>
+								<th>Spotify</th>
+								<th>Genre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Black Sabbath</td>
+								<td>
+									<iframe
+										src="https://open.spotify.com/embed/artist/5M52tdBnJaKSvOpJGz8mfZ"
+										frameborder="0"
+										allowfullscreen=""
+										loading="lazy"
+									></iframe>
+								</td>
+								<td>Rock</td>
+							</tr>
+							<tr>
+								<td>Kendrick Lamar</td>
+								<td>
+									<iframe
+										src="https://open.spotify.com/embed/artist/2YZyLoL8N0Wb9xBt1NhZWg"
+										frameborder="0"
+										allowfullscreen=""
+										loading="lazy"
+									></iframe>
+								</td>
+								<td>Rap</td>
+							</tr>
+							<tr>
+								<td>Pink floyd</td>
+								<td>
+									<iframe
+										src="https://open.spotify.com/embed/artist/0k17h0D3J5VfsdmQ1iZtE9"
+										frameborder="0"
+										allowfullscreen=""
+										loading="lazy"
+									></iframe>
+								</td>
+								<td>Rock</td>
+							</tr>
+							<tr>
+								<td>Daft Punk</td>
+								<td>
+									<iframe
+										src="https://open.spotify.com/embed/artist/4tZwfgrHOc3mvqYlEYSvVi"
+										frameborder="0"
+										allowfullscreen=""
+										loading="lazy"
+									></iframe>
+								</td>
+								<td>EDM</td>
+							</tr>
+						</tbody>
+
+						<tfoot>
+							<!--Skapar footern till tabellen-->
+							<tr>
+								<td>Jag vet inte</td>
+								<td>vad jag ska</td>
+								<td>skriva här</td>
+							</tr>
+						</tfoot>
+					</table>
 				</section>
 			</main>
 

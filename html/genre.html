@@ -3,14 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/header-and-footer.css" />
-		<link rel="stylesheet" href="../css/genre-styles.css" />
-		<link rel="stylesheet" href="../css/nav.css" />
+		<link rel="stylesheet" href="../css/styles.css" />
 		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
 		<script src="../scripts/navbar.js" defer></script>
 		<title>Genrer | Musiksidan</title>
 	</head>
-	<body>
+	<body id="genre">
 		<div class="wrapper">
 			<header>
 				<nav>
@@ -35,7 +33,7 @@
 			<main>
 				<section>
 					<h2 class="desktopTitle">GENRER</h2>
-
+					<!-- Anlednignen till att jag har gjort detta är eftersom att jag vill dela upp titeln i två ord per rad. Detta är ganska svårt att göra i endast css däremot, så jag gjorde det i html -->
 					<h2 class="mobileTitle">GE NR ER</h2>
 				</section>
 				<section>
@@ -86,7 +84,7 @@
 				<section>
 					<section>
 						<h2>kända pop-artister</h2>
-						<ol>
+						<ol start="1">
 							<li>Taylor Swift - 105 Miljoner lyssnare per månad</li>
 							<li>Ed Sheeran - 69 Miljoner lyssnare per månad</li>
 							<li>Ariana Grande - 90 Miljoner lyssnare per månad</li>
@@ -124,6 +122,7 @@
 					<article>
 						<h2>Rockmusik</h2>
 						<dl>
+							<!-- Detta är som en lista med titlar och beskrivningar -->
 							<dt>Indie Rock</dt>
 							<dd>
 								Betonar självständighet och oberoende, ofta med DIY-estetik och

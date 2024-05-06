@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="sv">
+	<!-- Detta sätter sidans språk -->
 	<head>
 		<meta charset="UTF-8" />
+		<!-- Teckenkodningen -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/header-and-footer.css" />
-		<link rel="stylesheet" href="./css/index-styles.css" />
-		<link rel="stylesheet" href="./css/nav.css" />
+		<!-- Detta ser till att sidan visas korrekt -->
+		<link rel="stylesheet" href="../css/styles.css" />
+		<!-- Detta länkar till css -->
 		<link rel="icon" type="image/x-icon" href="./src/img/favicon.ico" />
+		<!-- Ikonen som visas vid titeln -->
 		<script src="./scripts/navbar.js" defer></script>
+		<!-- Detta länkar javascripten till sidan, defer gör så att javascripten ladas efter att sidan är färdigladdad -->
 		<title>Startsida | Musiksidan</title>
+		<!-- Hemsidans titel -->
 	</head>
-	<body>
+	<body id="index">
+		<!-- Id till sidan -->
 		<div class="wrapper">
+			<!-- Wrappern till sidan -->
 			<header>
+				<!-- Denna definierar vad som finns i headern -->
 				<nav>
 					<ul>
+						<!-- Navigationslistan med alla länkar, detta visas när man trycker på "burgar-menyn" -->
 						<li><a href="./index.html">Hem</a></li>
 						<li><a href="./html/genre.html">Genrer</a></li>
 						<li><a href="./html/artists.html">Artister</a></li>
@@ -22,21 +31,29 @@
 					</ul>
 				</nav>
 				<div class="header-wrapper">
+					<!-- Denan wrapper ser till att elementen visas korrekt i headern -->
 					<div class="menu-icon">
+						<!-- Detta är meny-ikonen -->
 						<span></span>
+						<!-- Jag använder mig av span element för att skapa linjerna -->
 						<span></span>
 						<span></span>
 					</div>
 					<h1><a href="index.html">Musiksidan</a></h1>
+					<!-- Detta är en h1 som också aggerar som en länk -->
 					<img src="./src/img/logo-white.png" alt="Vår logotyp" />
+					<!-- Detta visar logotypen -->
 				</div>
 			</header>
 
 			<main>
+				<!-- Denna definierar vad som finns i main -->
 				<section>
+					<!-- En sektion med en titel -->
 					<h2>Påbörja din resa genom musiken!</h2>
 				</section>
 				<section>
+					<!-- En sektion med 3 olika artiklar med titel och text -->
 					<article>
 						<h2>Popmusik</h2>
 						<p>
@@ -70,7 +87,9 @@
 						</p>
 					</article>
 				</section>
+
 				<section>
+					<!-- En sektion som innehåller ytterligare 2 sektioner varav en är tom -->
 					<section>
 						<h2>Musikens Roll</h2>
 						<p>
@@ -125,7 +144,9 @@
 			</main>
 
 			<footer>
+				<!-- Denna definierar vad som finns i main -->
 				<section>
+					<!-- sektion 1 som visar alla sidor + logotypen -->
 					<img src="../src/img/logo-white.png" alt="Logotyp" />
 					<ul>
 						<li><a href="./index.html">Hem</a></li>
@@ -134,6 +155,7 @@
 						<li><a href="./html/favourite-song.html">Favoritlåt</a></li>
 					</ul>
 				</section>
+				<!-- sektion 2 som visar lite text -->
 				<section>
 					<p>Upphovsrätt ©2024 | Designad av Malte Elwhagen</p>
 				</section>
