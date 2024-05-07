@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="sv">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/styles.css" />
-		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../css/styles.css">
+		<link rel="icon" type="image/x-icon" href="../src/img/favicon.ico">
 		<script src="../scripts/navbar.js" defer></script>
 		<title>Favoritlåt | Musiksidan</title>
 	</head>
@@ -27,25 +27,28 @@
 					</div>
 
 					<h1><a href="../index.html">Musiksidan</a></h1>
-					<img src="../src/img/logo-white.png" alt="Vår logotyp" />
+					<img src="../src/img/logo-white.png" alt="Vår logotyp">
 				</div>
 			</header>
 
 			<main>
 				<form method="post" action="#">
+					<!-- Skapar en form med metoden post som inte har en action -->
 					<h2>Favoritlåt</h2>
 
 					<fieldset class="credentials">
+						<!-- Skapar en indelning i formen -->
 						<legend>Personuppgifter</legend>
 
 						<label for="name">Namn:*</label>
+						<!-- Skapar input fält -->
 						<input
 							type="text"
 							id="name"
 							name="name"
 							placeholder="Ditt namn"
 							required
-						/><br />
+						><br>
 						<label for="email">Email:*</label>
 						<input
 							type="email"
@@ -53,7 +56,7 @@
 							name="email"
 							placeholder="Ditt e-post"
 							required
-						/><br />
+						><br>
 						<label for="password">Lösenord:*</label>
 						<input
 							type="password"
@@ -61,7 +64,7 @@
 							name="password"
 							placeholder="Ditt lösenord"
 							required
-						/><br />
+						><br>
 						<label for="telephone">Telefonnummer:*</label>
 						<input
 							type="tel"
@@ -70,7 +73,7 @@
 							pattern="^(([+]46)\s*(7)|07)[02369]\s*(\d{4})\s*(\d{3})$"
 							placeholder="0701234567"
 							required
-						/><br />
+						><br>
 						<label for="age">Ålder:*</label>
 						<input
 							type="number"
@@ -80,7 +83,7 @@
 							required
 							min="1"
 							max="99"
-						/><br />
+						><br>
 					</fieldset>
 					<fieldset class="song">
 						<legend>Låt</legend>
@@ -91,7 +94,7 @@
 							name="songName"
 							placeholder="Låtens namn"
 							required
-						/><br />
+						><br>
 						<label for="bandName">Bandets/artistens namn:*</label>
 						<input
 							type="text"
@@ -99,9 +102,10 @@
 							name="bandName"
 							placeholder="Bandets namn"
 							required
-						/><br />
+						><br>
 						<label for="genre">Låtgenre:*</label>
 						<select id="genre" name="genre" required>
+							<!-- Skapar en dropdown meny med indelningar -->
 							<option value="">Välj en genre</option>
 							<optgroup label="Rock">
 								<option value="alternative_rock">Alternative Rock</option>
@@ -209,6 +213,7 @@
 						</select>
 
 						<fieldset class="radio">
+							<!-- Radioknappar med indelning -->
 							<legend>När släptes låten?</legend>
 
 							<div class="radio-group">
@@ -218,17 +223,17 @@
 									name="option"
 									value="option1"
 									checked
-								/>
+								>
 								<label for="option1">1900-1950</label>
 							</div>
 
 							<div class="radio-group">
-								<input type="radio" id="option2" name="option" value="option2" />
+								<input type="radio" id="option2" name="option" value="option2">
 								<label for="option2">1950-1980</label>
 							</div>
 
 							<div class="radio-group">
-								<input type="radio" id="option3" name="option" value="option3" />
+								<input type="radio" id="option3" name="option" value="option3">
 								<label for="option3">1980-2020</label>
 							</div>
 						</fieldset>
@@ -238,6 +243,7 @@
 					</fieldset>
 
 					<div class="submit">
+						<!-- Submitknapp -->
 						<div class="acceptTerms">
 							<input
 								type="checkbox"
@@ -245,21 +251,20 @@
 								name="accept"
 								value="accept"
 								required
-							/>
-							<label for="accept"
-								>Godkänner du våra
-								<a href="./user-agreement.html">användarvillkor?</a></label
+							>
+							<label for="accept">
+								Godkänner du våra <a href="./user-agreement.html">användarvillkor?</a></label
 							>
 						</div>
 
-						<input type="submit" value="Skicka" />
+						<input type="submit" value="Skicka">
 					</div>
 				</form>
 			</main>
 
 			<footer>
 				<section>
-					<img src="../src/img/logo-white.png" alt="Logotyp" />
+					<img src="../src/img/logo-white.png" alt="Logotyp">
 					<ul>
 						<li><a href="../index.html">Hem</a></li>
 						<li><a href="./genre.html">Genrer</a></li>

@@ -20,9 +20,21 @@
 	font-style: normal;
 }
 
+/*--------------------------------------- Variablar ---------------------------------*/
+
+:root {
+	--off-black: #0f1012;
+	--off-gray: #1e2023;
+	--off-white: #faf9f6;
+}
+
 body {
-	color: #faf9f6; /* Sätter standard bokstavsfärg till en "off white" (dvs nästan vit, men inte riktigt) */
-	background-color: #1e2023; /* Sätter standard bakgrundsfärg till en "off black" (dvs nästan svart, men inte riktigt) */
+	color: var(
+		--off-white
+	); /* Sätter standard bokstavsfärg till en "off white" (dvs nästan vit, men inte riktigt) */
+	background-color: var(
+		--off-gray
+	); /* Sätter standard bakgrundsfärg till en "off gray" (dvs nästan grå, men inte riktigt) */
 	font-family: poppinsregular, "Times New Roman", Times, sans-serif; /* Hemsidans font-stack */
 	margin: 0; /* Sätter margin till 0 */
 }
@@ -76,7 +88,7 @@ header {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr; /* Detta gör att headern delas upp i 3 lika stora delar, och tilldelar en del per element */
 	place-items: center; /* Detta cenrerar element horizontellt och vertikalt i sin del av headern*/
-	background-color: #1e2023;
+	background-color: var(--off-gray);
 }
 
 footer a, /* Detta är en gruppselektor som väljer alla a element i footern, nav & lokal nav */
@@ -84,32 +96,35 @@ header h1 a,
 .localNav > ul li a {
 	z-index: 1;
 	text-decoration: none; /* Dettar tar bort linjen under länkarna */
-	position: relative;
+	position: relative; /* Detta ger alla länkar position relative vilket behövs för att få animation att fungera */
 	padding: 10px;
 }
-footer a::before,
-header h1 a::before,
-.localNav > ul li a::before, /* Detta är en gruppselektor som väljer alla a element i footern, nav & lokal nav samt meny-ikonen*/
-.menu-icon::before {
-	background: hsl(45 100% 70%);
-	content: "";
-	inset: 0;
-	position: absolute;
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform 0.5s ease-in-out;
-	z-index: -1;
-}
+
 footer a:hover::before,
 header h1 a:hover::before,
 .localNav > ul li a:hover::before,
 .menu-icon:hover::before {
-	transform: scaleX(1);
-	transform-origin: left;
+	transform: scaleX(1); /* Detta gör att efften blir större sidleds */
+	transform-origin: left; /* Detta placerar var transformationen börjar, i detta fall vänster */
+}
+
+footer a::before,
+header h1 a::before,
+.localNav > ul li a::before, /* Detta är en gruppselektor som väljer alla a element i footern, nav & lokal nav samt meny-ikonen*/
+.menu-icon::before {
+	/* Detta gör att en tom bakgrund med en färg skapas när man hovrar vid länken och att bakgrunden försvinner efter man slutar hovra */
+	background: hsl(45 100% 70%);
+	content: "";
+	inset: 0; /* Inset används för att effekten använder position absolut */
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: right; /* Eftersom att vi vill att effekten ska tonas ut mot höger måste vi ändra transform-origin till höger*/
+	transition: transform 0.5s ease-in-out; /* Gör att effekten blir lite mjukare */
+	z-index: -1;
 }
 
 .menu-icon {
-	position: relative;
+	position: relative; /* Detta sätter lite grundläggande styling till meny ikonen samt ser till att man får en annan muspekare*/
 	height: 30px;
 	width: 30px;
 	cursor: pointer;
@@ -122,7 +137,7 @@ header img {
 }
 
 footer {
-	grid-area: footer;
+	grid-area: footer; /* Lite styling till footern, gör att första sektionen är dubbelt så stor som den andre */
 	display: grid;
 	grid-template-rows: 2fr 1fr;
 	z-index: 1;
@@ -130,7 +145,8 @@ footer {
 }
 
 footer section:nth-child(1) {
-	background-color: #1e2023;
+	/* Ser till att texten är centrerad */
+	background-color: var(--off-gray);
 	display: flex; /* Detta centererar elementen både vertikalt och horisontellt med hjälp av flex*/
 	justify-content: center;
 	align-items: center;
@@ -150,7 +166,7 @@ footer section:nth-child(1) > ul > li {
 }
 
 footer section:nth-child(2) {
-	background-color: #0f1012; /* Ändrar bakgrundsfärgen och centerar texen */
+	background-color: var(--off-black); /* Ändrar bakgrundsfärgen och centerar texen */
 	text-align: center;
 }
 
@@ -186,6 +202,7 @@ a:active {
 
 @media screen and (max-width: 500px) {
 	footer section:nth-child(1) > ul {
+		/* Justerar layouten på listan i footern så att den ska passa på mindre skärmar */
 		padding: 1vw;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -197,33 +214,13 @@ a:active {
 /*----------------------------------- NAVIGATION ------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
 
-.menu-icon {
-	position: relative;
-	height: 30px;
-	width: 30px;
-	cursor: pointer;
-	z-index: 2;
-	transition: transform 0.3s ease; /* Added transition property */
-}
-
-.menu-icon::before {
-	background: hsl(45 100% 70%);
-	content: "";
-	inset: 0;
-	position: absolute;
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform 0.5s ease-in-out;
-	z-index: -1;
-}
-
-.menu-icon:hover::before {
-	/* Changed selector to .menu-icon:hover::before */
-	transform: scaleX(1);
-	transform-origin: left;
+.menu-icon > span:first-child {
+	/* Detta skapar en till linje som bara tar upp halva ikonen */
+	width: 15px;
 }
 
 .menu-icon > span {
+	/* Detta skapar en linje under den första som tar upp hela bredden, ger också lite stylting till alla linjer */
 	height: 2px;
 	width: 30px;
 	display: block;
@@ -232,26 +229,24 @@ a:active {
 	transition: transform 0.2s ease, background-color 0.5s ease;
 }
 
-.menu-icon > span:first-child {
-	width: 15px;
-}
 .menu-icon > span:last-child {
 	width: 15px;
 	float: right;
 }
 
-header > nav:before,
+header > nav:before, /* Denna styling fungerar väldigt likt effekten på länkarna, fast denna tar upp hela skärmen */
 header > nav:after {
 	content: "";
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(234, 234, 234, 0.2);
+	background: rgba(234, 234, 234, 0.4);
 	z-index: -1;
 	transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
 	transform: translateX(0%) translateY(-100%);
 }
 header > nav:after {
+	/* Denna visas lite efter den första bakgrundsfärgen vilket skaparen fin effekt */
 	background: rgba(250, 249, 246, 1);
 
 	transition-delay: 0s;
@@ -261,16 +256,17 @@ header > nav:before {
 }
 
 header > nav {
+	/* Lite styling för globala menyn */
 	position: fixed;
 	z-index: 1;
-	background-color: #1e2023;
-	font-family: "Fira Sans", sans-serif;
-	color: #1e2023;
+	background-color: var(--off-gray);
+	font-family: sans-serif; /* Tydligen är det en bra idé att ha olika typsnitt för innehåll och navigation */
+	color: var(--off-gray);
 }
 
 header > nav ul {
-	/*Detta gör så att man inte kan trycka på länkarna när naven inte är aktiv*/
-	pointer-events: none;
+	/* Detta är stylingen till alla listan för naven, gör bland annat så att länkarna är i mitten av skärmen och har mellanrum */
+	pointer-events: none; /*Detta gör så att man inte kan trycka på länkarna när naven inte är aktiv*/
 	position: fixed;
 	top: 40%;
 	transform: translate(0%, -50%);
@@ -296,7 +292,7 @@ header > nav ul li {
 header > nav ul li a {
 	/*Stylen för alla header >nav element */
 	text-decoration: none;
-	color: #1e2023;
+	color: var(--off-gray);
 	display: block;
 	width: 100%;
 	padding: 10px 0;
@@ -307,7 +303,7 @@ header > nav ul li a:before {
 	/* Detta skapar linjen under alla nev element*/
 	content: "";
 	position: absolute;
-	background: #1e2023;
+	background: var(--off-gray);
 	width: 100%;
 	height: 2px;
 	bottom: 0;
@@ -318,11 +314,12 @@ header > nav ul li a:before {
 
 header > nav ul li a:hover:before {
 	/*Detta ökar längden på linjen under nav elementen*/
-	transform: scaleX(0.7); /* Show the line on hover */
+	transform: scaleX(0.7);
 }
 
 body.nav-active .menu-icon > span {
-	background-color: #1e2023;
+	/* Dessa gör att meny ikonen animeras för att se ut som ett kryss när navigationen är aktiv  */
+	background-color: var(--off-gray);
 	transform: translateX(0px) rotate(-45deg);
 }
 body.nav-active .menu-icon > span:first-child {
@@ -332,6 +329,7 @@ body.nav-active .menu-icon > span:last-child {
 	transform: translateX(-2px) rotate(45deg);
 }
 body.nav-active header > nav {
+	/* Detta gör naven synlig när man naven är aktiv */
 	visibility: visible;
 }
 body.nav-active header > nav:before,
@@ -349,6 +347,7 @@ body.nav-active header > nav ul {
 }
 
 body.nav-active header > nav ul li {
+	/* Detta gör att länkarna visas med en fin animation */
 	opacity: 1;
 	transform: translateX(0%);
 	transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
@@ -401,7 +400,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 }
 
 #index main > section:nth-child(1) > h2 {
-	/* Detta skapar en "knapp" som ändrar utseende när man höbrar över den */
+	/* Detta skapar en "knapp" som ändrar utseende när man hovrar över den */
 	color: rgba(30, 32, 35, 0.9);
 	margin: 0;
 	padding: 20px;
@@ -415,15 +414,17 @@ body.nav-active header > nav ul li:nth-child(4) {
 }
 
 #index main > section:nth-child(1) > h2:hover {
-	box-shadow: 8px 8px 2px #faf9f6;
+	/* Hover effekt på "knappen" */
+	box-shadow: 8px 8px 2px var(--off-white);
 	background-color: rgba(227, 150, 62, 0.9);
-	color: #faf9f6;
+	color: var(--off-white);
 }
 
 #index main > section:nth-child(2) {
+	/* Skapar en trespaltslayout med text och titel */
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	place-items: center; /* Center content both horizontally and vertically */
+	place-items: center;
 	height: calc(20rem + 200px);
 	padding: 20px;
 	gap: 30px;
@@ -432,29 +433,33 @@ body.nav-active header > nav ul li:nth-child(4) {
 }
 
 #index main > section:nth-child(2) article {
+	/* Höjden på textspalterna */
 	height: 240px;
 }
 
 #index main > section:nth-child(3) {
-	height: 600px;
+	/* Sätter en bakgrundsbild på andra sektionen i main  */
+	height: auto;
 	background-image: url("../src/img/guitar.jpg");
 	background-size: cover;
 	background-position: center;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr; /* Skapar två spalter */
 }
 
 #index main > section:nth-child(3) section {
+	/* Sätter en blur på bidlen */
 	backdrop-filter: blur(10px);
 }
 #index main > section:nth-child(3) section:nth-child(1) {
+	/* Gör bakgrunden till texten lite finare */
 	background: linear-gradient(45deg, rgba(15, 16, 18, 0.8), rgba(30, 32, 35, 0.8));
 	padding: 20px;
 	text-align: center;
 }
 
 #index main > section:nth-child(4) {
-	height: 600px;
+	height: auto;
 	background-image: url("../src/img/black-and-white-concert.jpg");
 	background-size: cover;
 	background-position: center;
@@ -485,24 +490,6 @@ body.nav-active header > nav ul li:nth-child(4) {
 		grid-template-rows: 1fr 1fr;
 		height: 37rem;
 	}
-
-	#index main > section:nth-child(3) {
-		height: 700px;
-	}
-
-	#index main > section:nth-child(4) {
-		height: 700px;
-	}
-}
-
-@media screen and (max-width: 1125px) {
-	#index main > section:nth-child(3) {
-		grid-template-columns: 60% 1fr;
-	}
-
-	#index main > section:nth-child(4) {
-		grid-template-columns: 1fr 60%;
-	}
 }
 
 @media screen and (max-width: 910px) {
@@ -523,19 +510,11 @@ body.nav-active header > nav ul li:nth-child(4) {
 	#index main > section:nth-child(2) {
 		height: 800px;
 	}
-
-	#index main > section:nth-child(3) {
-		grid-template-columns: 75% 1fr;
-	}
-
-	#index main > section:nth-child(4) {
-		grid-template-columns: 1fr 80%;
-	}
 }
 
 @media screen and (max-width: 700px) {
 	#index main > section:nth-child(2) {
-		height: 1200px;
+		height: 1000px;
 		gap: 0;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(
@@ -545,14 +524,11 @@ body.nav-active header > nav ul li:nth-child(4) {
 	}
 
 	#index main > section:nth-child(3) {
-		height: 700px;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
 	}
 
 	#index main > section:nth-child(4) {
-		/* Detta gör så att texten går över bilden helt och hållet */
-		height: 800px;
 		grid-template-columns: 1fr;
 	}
 
@@ -567,16 +543,8 @@ body.nav-active header > nav ul li:nth-child(4) {
 		height: 1200px;
 	}
 
-	#index main > section:nth-child(3) {
-		height: 800px;
-	}
-
 	#index main > section:nth-child(3) section {
 		backdrop-filter: blur(6px);
-	}
-
-	#index main > section:nth-child(4) {
-		height: 900px;
 	}
 
 	#index main > section:nth-child(4) section {
@@ -586,15 +554,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 
 @media screen and (max-width: 370px) {
 	#index main > section:nth-child(2) {
-		height: 1300px;
-	}
-
-	#index main > section:nth-child(3) {
-		height: 900px;
-	}
-
-	#index main > section:nth-child(4) {
-		height: 1000px;
+		height: 1400px;
 	}
 }
 
@@ -686,7 +646,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 	/* Definiera två kolumner med proportionerna 1fr och 2fr */
 	grid-template-columns: 1fr 2fr;
 	/* Tillämpa en bakgrundsfärg */
-	background-color: #0f1012;
+	background-color: var(--off-black);
 }
 
 /* Styling för sektionerna inom den tredje sektionen */
@@ -713,8 +673,8 @@ body.nav-active header > nav ul li:nth-child(4) {
 
 /* Styling för bilderna inom figuren i den tredje sektionen */
 #genre main section:nth-child(3) > figure > img {
-	/* Ange höjden på bilden */
-	height: 600px;
+	/* Ange höjden på bilden genom att beräkna 40vh + 100px */
+	width: calc(40vw + 100px);
 	/* Runda hörnen på bilden */
 	border-radius: 15px;
 	/* Lägg till en skugga runt bilden */
@@ -748,13 +708,13 @@ body.nav-active header > nav ul li:nth-child(4) {
 /* Styling för den femte sektionen av huvudgenren */
 #genre main section:nth-child(5) {
 	/* Ange bakgrundsfärgen för sektionen */
-	background-color: #1e2023;
+	background-color: var(--off-gray);
 	/* Använd rutnätslayout för att placera innehållet centralt */
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr; /* Skapar trespaltslayout */
 	place-items: center; /* Centrera innehållet både horisontellt och vertikalt */
 	/* Justera höjden automatiskt */
-	height: 480px;
+	height: 630px;
 	/* Ange mellanrum mellan elementen */
 	gap: 30px;
 	/* Lägg till vänster och höger padding */
@@ -774,7 +734,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 	/* Ange en solid ram runt artiklarna */
 	border-style: solid;
 	/* Ange färgen på ramen */
-	border-color: #0f1012;
+	border-color: var(--off-black);
 	/* Runda hörnen på artiklarna */
 	border-radius: 10px;
 	height: 350px;
@@ -803,7 +763,7 @@ dt {
 /* Styling för den sjunde sektionen av huvudgenren */
 #genre main section:nth-child(7) {
 	/* Ange bakgrundsfärgen för sektionen */
-	background-color: #0f1012;
+	background-color: var(--off-black);
 	/* Använd rutnätslayout för att placera innehållet centralt */
 	display: grid;
 	place-items: center; /* Centrera innehållet både horisontellt och vertikalt */
@@ -826,24 +786,12 @@ dt {
 		letter-spacing: 4vw;
 	}
 
-	#genre main section:nth-child(3) > figure > img {
-		height: 500px;
-	}
-
 	#genre main section:nth-child(5) article {
 		height: 400px;
 	}
 }
 
 @media screen and (max-width: 1400px) {
-	#genre main section:nth-child(3) > figure > img {
-		height: 400px;
-	}
-
-	#genre main section:nth-child(5) {
-		height: 600px;
-	}
-
 	#genre main section:nth-child(5) article {
 		height: 450px;
 	}
@@ -853,10 +801,6 @@ dt {
 	.desktopTitle {
 		font-size: 350px;
 		letter-spacing: 4vw;
-	}
-
-	#genre main section:nth-child(3) > figure > img {
-		height: 400px;
 	}
 
 	#genre main section:nth-child(5) article {
@@ -891,12 +835,8 @@ dt {
 		grid-area: img;
 	}
 
-	#genre main section:nth-child(3) > figure > img {
-		height: 350px;
-	}
-
 	#genre main section:nth-child(5) {
-		height: 1000px;
+		height: auto;
 		grid-template-columns: 1fr 1fr; /* Detta ändrar layouten från en trespaltslayout till en tvåspaltslayout */
 		grid-template-rows: 1fr 1fr;
 	}
@@ -944,14 +884,13 @@ dt {
 	}
 
 	#genre main section:nth-child(5) {
-		height: 1500px;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(3, 1fr);
 	}
 
 	#genre main section:nth-child(5) article {
 		width: 400px;
-		height: 400px;
+		height: auto;
 	}
 
 	#genre main section:nth-child(7) {
@@ -971,21 +910,16 @@ dt {
 		grid-template-rows: 2fr 1fr;
 	}
 
-	#genre main section:nth-child(3) > figure > img {
-		height: 250px;
-	}
-
 	#genre main section:nth-child(3) > section {
 		font-size: 15px;
 	}
 
 	#genre main section:nth-child(5) {
-		height: 1700px;
+		height: auto;
 	}
 
 	#genre main section:nth-child(5) article {
-		width: 375px;
-		height: 500px;
+		width: 350px;
 	}
 
 	#genre main section:nth-child(7) {
@@ -1001,7 +935,6 @@ dt {
 
 	#genre main section:nth-child(5) article {
 		width: 300px;
-		height: 550px;
 	}
 
 	#genre main section:nth-child(7) {
@@ -1015,21 +948,12 @@ dt {
 		letter-spacing: 5vw;
 	}
 
-	#genre main section:nth-child(3) > figure > img {
-		height: 200px;
-	}
-
 	#genre main section:nth-child(3) > section {
 		font-size: 13px;
 	}
 
-	#genre main section:nth-child(5) {
-		height: 2300px;
-	}
-
 	#genre main section:nth-child(5) article {
 		width: 250px;
-		height: 625px;
 	}
 
 	#genre main section:nth-child(7) {
@@ -1051,21 +975,8 @@ dt {
 		font-size: 30px;
 	}
 
-	#genre main section:nth-child(3) > figure > img {
-		height: 175px;
-	}
-
-	#genre main section:nth-child(5) {
-		height: 2300px;
-	}
-
 	#genre main section:nth-child(5) article {
 		width: 215px;
-		height: 800px;
-	}
-
-	#genre main section:nth-child(5) article:nth-child(2) {
-		height: 550px;
 	}
 
 	#genre main section:nth-child(7) {
@@ -1076,6 +987,8 @@ dt {
 /*-----------------------------------------------------------------------------------*/
 /*------------------------------------- ARTISTS -------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
+
+/* Helt ärligt är jag inte super nöjd hur denna sida ser ut. Tycker den är ganska ful, men har inte tid att göra den snygg. */
 
 #artists p {
 	/* Textstorlek */
@@ -1114,7 +1027,7 @@ dt {
 
 #artists main section:nth-child(3) {
 	height: auto;
-	background-color: #0f1012;
+	background-color: var(--off-black);
 }
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------TABLE STYLE-------------------------------------*/
@@ -1136,7 +1049,7 @@ th,
 td {
 	/* Detta ger styling till tabellen. Ger lite padding och sätter en vit border */
 	padding: 10px;
-	border: 1px solid #faf9f6;
+	border: 1px solid var(--off-white);
 	border-collapse: collapse; /* Gör att om två borders angränsar varandra går de ihop till en border */
 }
 
@@ -1148,7 +1061,7 @@ tfoot tr td {
 
 tr:nth-child(even) {
 	/*Skapar zebrastriping på tabellen på varje jämnt "barn"*/
-	background-color: #1e2023;
+	background-color: var(--off-gray);
 }
 
 th:nth-child(1),
@@ -1166,6 +1079,7 @@ th:nth-child(3) {
 }
 
 iframe {
+	/* Lite styling för spotify iframen */
 	width: 100%;
 	height: 352px;
 	border-radius: 12px;
@@ -1173,7 +1087,7 @@ iframe {
 
 :target {
 	/* Detta ger en border till element man väljer genom den lokala navigationen */
-	border: 1px solid #faf9f6;
+	border: 1px solid var(--off-white);
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -1181,21 +1095,26 @@ iframe {
 /*-----------------------------------------------------------------------------------*/
 
 .localNav {
+	/* Hoppas att det är okej att göra den lokala nav på detta sätt.  
+	eftersom att naven ska användas för att navigera sidan användaren är på 
+	tyckte jag att naven skulle följa dig när du scrollar. För att uppnå detta använder jag position fixed
+	*/
 	grid-area: nav;
-	background-color: #0f1012;
+	background-color: var(--off-black);
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 150px;
 	height: 100%;
 	z-index: 0;
-	display: flex;
+	display: flex; /* Detta centrerar texten på naven horisontellt och vertikalt */
 	align-items: center;
 	justify-content: center;
-	border-right: 1px solid white;
+	border-right: 1px solid white; /* Lägger en border på högersidan  */
 }
 
 .localNav > ul {
+	/* Detta ger mellanrum mellan list föremålen */
 	display: grid;
 	gap: 200px;
 	list-style-type: none;
@@ -1220,17 +1139,18 @@ iframe {
 	}
 
 	.localNav {
+		/* Justerar lokala navens bredd */
 		width: 100px;
 	}
 
 	.localNav > ul li a {
-		font-size: 1.5ch;
+		font-size: 1.5ch; /* Ändrade lokala navens textstorlek på länkarna */
 		padding: 10px;
 	}
 
 	#artists main section:nth-child(2) {
 		height: auto;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr; /* Detta ändrar tvåspalslayouten till en enspaltslayout */
 		grid-template-rows: 1fr 1fr;
 		padding: 20px;
 	}
@@ -1311,11 +1231,9 @@ iframe {
 }
 
 form {
-	border-style: solid;
-	border-radius: 10px;
-	box-shadow: 12px 10px 2px 1px rgba(15, 16, 18, 0.5);
-	border-color: #1e2023;
-	background-color: #1e2023;
+	border-radius: 10px; /* Ger rundade hörn */
+	box-shadow: 12px 10px 2px 1px rgba(15, 16, 18, 0.5); /* Ger en skugga för stil */
+	background-color: var(--off-gray);
 	width: 40vw;
 	margin: auto; /* centrerar saker horisontellt */
 	padding: 20px; /* lite padding för att skapa rymlighet */
@@ -1350,8 +1268,8 @@ form input {
 	transition: border-color 0.9s ease;
 	width: 15vw;
 	height: 25px;
-	color: #faf9f6;
-	background-color: #1e2023;
+	color: var(--off-white);
+	background-color: var(--off-gray);
 	border-radius: 10px;
 }
 
@@ -1395,22 +1313,24 @@ form input[type="radio"] {
 }
 
 form select {
+	/* Lite simpel styling för låtgenre fältet, ändrar storlek och form */
 	transition: border-color 0.9s ease;
 	width: 16vw;
 	height: 40px;
 	padding: 0.675em 6em 0.675em 1em;
-	background-color: #1e2023;
-	border: 1px solid #faf9f6;
+	background-color: var(--off-gray);
+	border: 1px solid var(--off-white);
 	border-radius: 10px;
-	color: #faf9f6;
+	color: var(--off-white);
 	cursor: pointer;
 }
 
 form textarea {
+	/* Lite små styling, gör att man inte kan ändra storlek på textrutan */
 	resize: none;
 	width: 15vw;
-	color: #faf9f6;
-	background-color: #1e2023;
+	color: var(--off-white);
+	background-color: var(--off-gray);
 	outline: none;
 }
 
@@ -1421,13 +1341,14 @@ form .submit {
 }
 
 .acceptTerms {
+	/* Detta centrerar checkbox labeln */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .acceptTerms > label {
 	padding: 5px;
-	cursor: pointer;
+	cursor: pointer; /* Detta ger en annan markör när man hovrar över labeln till checkboxen */
 }
 
 form input[type="checkbox"] {
@@ -1438,36 +1359,23 @@ form input[type="checkbox"] {
 form input[type="submit"] {
 	width: 250px;
 	height: 40px;
-	border-radius: 20px;
+	border-radius: 20px; /* Ger rundade hörnor */
 	border-style: none;
 	font-size: 20px;
-	background-color: #faf9f6;
-	color: #1e2023;
+	background-color: var(--off-white);
+	color: var(--off-gray);
 	cursor: pointer;
-	display: flex;
+	display: flex; /* Centrerar knappen i mitten */
 	justify-self: center;
-	transition: background-color 0.3s, transform 0.3s;
-}
-
-form input[type="submit"] {
-	width: 250px;
-	height: 40px;
-	border-radius: 20px;
-	border-style: none;
-	font-size: 20px;
-	background-color: #faf9f6;
-	color: #1e2023;
-	cursor: pointer;
-	display: flex;
-	justify-self: center;
-	transition: transform 0.4s, background-color 0.3s, color 0.3s;
+	transition: transform 0.4s, background-color 0.3s, color 0.3s; /* Detta gör att animationen blir lite mer "smooth" */
 }
 
 form input[type="submit"]:hover {
+	/* Detta ger en liten fin hover effect som gör knappen större, ger lite skugga och ändrar lite färger */
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 	transform: scale(1.1);
-	background-color: #1e2023;
-	color: #faf9f6;
+	background-color: var(--off-gray);
+	color: var(--off-white);
 }
 
 /* Add new CSS for responsive layout */
@@ -1523,28 +1431,6 @@ form input[type="submit"]:hover {
 		height: 1200px;
 	}
 
-	form input {
-		width: 27vw;
-		display: flex;
-		justify-self: center;
-	}
-
-	form select {
-		width: 28vw;
-		display: flex;
-		justify-self: center;
-	}
-
-	form textarea {
-		width: 27vw;
-		display: flex;
-		justify-self: center;
-	}
-
-	form fieldset.radio {
-		margin: auto;
-	}
-
 	form {
 		/* Detta justerar placeringen på de olika sektionerna samt ändrar från en tvåspaltslayout till en enspaltslayout */
 		width: 55vw;
@@ -1555,6 +1441,22 @@ form input[type="submit"]:hover {
 			"submit";
 		grid-template-columns: 1fr;
 		text-align: center;
+	}
+
+	form select,
+	form input,
+	form textarea {
+		width: 27vw;
+		display: flex;
+		justify-self: center;
+	}
+
+	form select {
+		width: 28vw;
+	}
+
+	form fieldset.radio {
+		margin: auto;
 	}
 }
 
@@ -1594,7 +1496,7 @@ form input[type="submit"]:hover {
 
 #user-agreement main section:first-child {
 	height: auto;
-	background-color: #0f1012;
+	background-color: var(--off-black);
 	display: grid; /* Detta skapar en trespaltslayout */
 	grid-template-rows: 50px 1fr; /* Det finns två rader, den första 50px lång, vilket är titel var titeln är placerad */
 	grid-template-columns: 1fr 1fr 1fr; /* Här skapas tre spalter */
