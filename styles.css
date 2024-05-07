@@ -766,6 +766,7 @@ dt {
 	background-color: var(--off-black);
 	/* Använd rutnätslayout för att placera innehållet centralt */
 	display: grid;
+	grid-template-columns: 1fr 1fr;
 	place-items: center; /* Centrera innehållet både horisontellt och vertikalt */
 	height: auto; /* Justera höjden automatiskt */
 	gap: 30px; /* Ange mellanrum mellan elementen */
@@ -807,9 +808,6 @@ dt {
 		height: 530px;
 	}
 
-	#genre main section:nth-child(7) {
-		height: 400px;
-	}
 }
 @media screen and (max-width: 1140px) {
 	.desktopTitle {
@@ -894,7 +892,6 @@ dt {
 	}
 
 	#genre main section:nth-child(7) {
-		height: 600px;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr;
 	}
@@ -922,9 +919,7 @@ dt {
 		width: 350px;
 	}
 
-	#genre main section:nth-child(7) {
-		height: 700px;
-	}
+
 }
 
 @media screen and (max-width: 500px) {
@@ -937,9 +932,7 @@ dt {
 		width: 300px;
 	}
 
-	#genre main section:nth-child(7) {
-		height: 900px;
-	}
+
 }
 
 @media screen and (max-width: 500px) {
@@ -956,9 +949,7 @@ dt {
 		width: 250px;
 	}
 
-	#genre main section:nth-child(7) {
-		height: 1000px;
-	}
+
 }
 
 @media screen and (max-width: 400px) {
@@ -979,9 +970,6 @@ dt {
 		width: 215px;
 	}
 
-	#genre main section:nth-child(7) {
-		height: 1100px;
-	}
 }
 
 /*-----------------------------------------------------------------------------------*/
