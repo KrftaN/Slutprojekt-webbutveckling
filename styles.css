@@ -37,6 +37,7 @@ body {
 	); /* Sätter standard bakgrundsfärg till en "off gray" (dvs nästan grå, men inte riktigt) */
 	font-family: poppinsregular, "Times New Roman", Times, sans-serif; /* Hemsidans font-stack */
 	margin: 0; /* Sätter margin till 0 */
+	height: 100vh;
 }
 
 .wrapper {
@@ -46,6 +47,8 @@ body {
 		"header"
 		"main"
 		"footer";
+	grid-template-rows: 75px 1fr 150px;
+	height: 100%;
 }
 
 .wrapperWithLocal {
@@ -56,6 +59,9 @@ body {
 		"nav main"
 		"footer footer";
 	grid-template-columns: 150px 1fr; /* Detta ser till att lokala nav är 150px bred */
+	grid-template-rows: 75px auto 150px;
+	height: 100%;
+
 }
 
 h2 {
@@ -983,6 +989,11 @@ dt {
 	font-size: 2ex;
 }
 
+#artists main   {
+	overflow: auto;
+}
+
+
 #artists main section:nth-child(1) {
 	/* Styling till videon, detta gör att videon tar upp hela skärmen sidleds */
 	height: auto;
@@ -1089,13 +1100,14 @@ iframe {
 	*/
 	grid-area: nav;
 	background-color: var(--off-black);
-	position: fixed;
+	/* position: fixed;
 	top: 0;
-	left: 0;
+	left: 0; */
 	width: 150px;
 	height: 100%;
 	z-index: 0;
 	display: flex; /* Detta centrerar texten på naven horisontellt och vertikalt */
+	justify-content: flex-start;
 	align-items: center;
 	justify-content: center;
 	border-right: 1px solid white; /* Lägger en border på högersidan  */
