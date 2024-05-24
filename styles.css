@@ -6,16 +6,16 @@
 
 @font-face {
 	font-family: "poppinsregular";
-	src: url("../src/webkits/poppins-webkit/poppins-regular-webfont.woff2") format("woff2"),
-		url("../src/webkits/poppins-webkit/poppins-regular-webfont.woff") format("woff");
+	src: url("src/webkits/poppins-webkit/poppins-regular-webfont.woff2") format("woff2"),
+		url("src/webkits/poppins-webkit/poppins-regular-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "bebasneue";
-	src: url("../src/webkits/bebasnueue-webkit/bebasneue-regular-webfont.woff2") format("woff2"),
-		url("../src/webkits/bebasnueue-webkit/bebasneue-regular-webfont.woff") format("woff");
+	src: url("src/webkits/bebasnueue-webkit/bebasneue-regular-webfont.woff2") format("woff2"),
+		url("src/webkits/bebasnueue-webkit/bebasneue-regular-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -398,7 +398,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 
 #index main > section:nth-child(1) {
 	height: 95vh;
-	background-image: url("../src/img/concert-cover.jpg"); /* Sätter en bakgrundsbild och placerar knappen i sin mitt */
+	background-image: url("src/img/concert-cover.jpg"); /* Sätter en bakgrundsbild och placerar knappen i sin mitt */
 	background-size: cover;
 	background-position: center;
 	display: grid;
@@ -446,7 +446,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 #index main > section:nth-child(3) {
 	/* Sätter en bakgrundsbild på andra sektionen i main  */
 	height: auto;
-	background-image: url("../src/img/guitar.jpg");
+	background-image: url("src/img/guitar.jpg");
 	background-size: cover;
 	background-position: center;
 	display: grid;
@@ -466,7 +466,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 
 #index main > section:nth-child(4) {
 	height: auto;
-	background-image: url("../src/img/black-and-white-concert.jpg");
+	background-image: url("src/img/black-and-white-concert.jpg");
 	background-size: cover;
 	background-position: center;
 	display: grid;
@@ -618,7 +618,7 @@ body.nav-active header > nav ul li:nth-child(4) {
 /* Styling för sektionerna inom den andra sektionen */
 #genre main section:nth-child(2) > section {
 	/* Ange bakgrundsbilden */
-	background-image: url("../src/img/pop.jpg");
+	background-image: url("src/img/pop.jpg");
 	/* Säkerställ att bakgrundsbilden täcker hela området */
 	background-size: cover;
 	/* Positionera bakgrundsbilden till vänster centrerad */
@@ -757,7 +757,7 @@ dt {
 /* Styling för den sjätte sektionen av huvudgenren */
 #genre main section:nth-child(6) {
 	/* Ange bakgrundsbilden */
-	background-image: url("../src/img/vinyl-and-player.jpg");
+	background-image: url("src/img/vinyl-and-player.jpg");
 	/* Säkerställ att bakgrundsbilden täcker hela området */
 	background-size: cover;
 	/* Positionera bakgrundsbilden centralt */
@@ -1226,7 +1226,7 @@ iframe {
 #favourite-song main {
 	/* Detta placerar formen i mitten av skärmen samt en snygg bakgrundsbild */
 	height: 800px;
-	background: url("../src/img/vinyl.jpg") center/cover;
+	background: url("src/img/vinyl.jpg") center/cover;
 	display: flex;
 }
 
