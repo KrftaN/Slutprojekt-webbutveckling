@@ -453,7 +453,8 @@ body.nav-active header > nav ul li:nth-child(4) {
 }
 
 /* Styling för skrivbordsrubriken */
-#genre h2:nth-child(1) {
+#genre main section:nth-child(1) h2:nth-child(1),
+#genre main section:nth-child(4) h2:nth-child(1) {
 	/* Ange fontstorleken för skrivbord */
 	font-size: 470px;
 	/* Ange bokstavsavståndet för skrivbord */
@@ -465,7 +466,8 @@ body.nav-active header > nav ul li:nth-child(4) {
 }
 
 /* Styling för mobilrubriken */
-#genre h2:nth-child(2) {
+#genre main section:nth-child(1) h2:nth-child(2),
+#genre main section:nth-child(4) h2:nth-child(2) {
 	/* Gömmer mobilrubriken från början */
 	display: none; /* anledningen till att jag inte använder visability istället 
 	är eftersom att den i sådanafall fortfarande tar upp plats */
@@ -1110,7 +1112,8 @@ a:active {
 /* Huvudsakligen vad dessa media querien består av är bara små ändringar i höjd och längd. Ganska ointressant */
 
 @media screen and (max-width: 1550px) {
-	#genre h2:nth-child(1) {
+	#genre main section:nth-child(1) h2:nth-child(1),
+	#genre main section:nth-child(4) h2:nth-child(1) {
 		font-size: 390px;
 		letter-spacing: 4vw;
 	}
@@ -1127,7 +1130,8 @@ a:active {
 }
 
 @media screen and (max-width: 1270px) {
-	#genre h2:nth-child(1) {
+	#genre main section:nth-child(1) h2:nth-child(1),
+	#genre main section:nth-child(4) h2:nth-child(1) {
 		font-size: 350px;
 		letter-spacing: 4vw;
 	}
@@ -1138,7 +1142,8 @@ a:active {
 
 }
 @media screen and (max-width: 1140px) {
-	#genre h2:nth-child(1) {
+	#genre main section:nth-child(1) h2:nth-child(1),
+	#genre main section:nth-child(4) h2:nth-child(1) {
 		font-size: 300px;
 		letter-spacing: 4vw;
 	}
@@ -1177,7 +1182,8 @@ a:active {
 		height: 1100px;
 	}
 
-	#genre h2:nth-child(1) {
+	#genre main section:nth-child(1) h2:nth-child(1),
+	#genre main section:nth-child(4) h2:nth-child(1) {
 		font-size: 275px;
 		letter-spacing: 3vw;
 	}
@@ -1200,12 +1206,14 @@ a:active {
 		height: auto;
 	}
 
-	#genre h2:nth-child(1) {
+	#genre main section:nth-child(1) h2:nth-child(1),
+	#genre main section:nth-child(4) h2:nth-child(1) {
 		/* Detta gör desktopversionen av titeln osynlig */
 		display: none;
 	}
 
-	#genre h2:nth-child(2) {
+	#genre main section:nth-child(1) h2:nth-child(2),
+	#genre main section:nth-child(4) h2:nth-child(2) {
 		/* Detta gör mobilversionen av  titeln synlig*/
 		display: block;
 	}
@@ -1227,7 +1235,8 @@ a:active {
 }
 
 @media screen and (max-width: 610px) {
-	#genre h2:nth-child(2) {
+	#genre main section:nth-child(1) h2:nth-child(2),
+	#genre main section:nth-child(4) h2:nth-child(2) {
 		font-size: 350px;
 		letter-spacing: 5vw;
 	}
@@ -1250,7 +1259,8 @@ a:active {
 }
 
 @media screen and (max-width: 500px) {
-	#genre h2:nth-child(2) {
+	#genre main section:nth-child(1) h2:nth-child(2),
+	#genre main section:nth-child(4) h2:nth-child(2) {
 		font-size: 350px;
 		letter-spacing: 5vw;
 	}
@@ -1265,7 +1275,8 @@ a:active {
 }
 
 @media screen and (max-width: 500px) {
-	#genre h2:nth-child(2) {
+	#genre main section:nth-child(1) h2:nth-child(2),
+	#genre main section:nth-child(4) h2:nth-child(2) {
 		font-size: 280px;
 		letter-spacing: 5vw;
 	}
@@ -1284,7 +1295,8 @@ a:active {
 }
 
 @media screen and (max-width: 400px) {
-	#genre h2:nth-child(2) {
+	#genre main section:nth-child(1) h2:nth-child(2),
+	#genre main section:nth-child(4) h2:nth-child(2) {
 		font-size: 255px;
 		letter-spacing: 5vw;
 	}
