@@ -18,7 +18,7 @@
 	<body id="index">
 		<!-- Id till sidan -->
 		<div class="wrapper">
-			<!-- Wrappern till sidan -->
+			<!-- Wrappern till sidan, används för gruppera huvudelarna på rätt plats -->
 			<header>
 				<!-- Denna definierar vad som finns i headern -->
 				<nav>
@@ -33,7 +33,11 @@
 				<div class="header-wrapper">
 					<!-- Denan wrapper ser till att elementen visas korrekt i headern -->
 					<div class="menu-icon">
-						<!-- Detta är meny-ikonen -->
+						<!-- Detta är meny-ikonen, anledningen till att det är en div och inte är en sektion är eftersom enligt  
+						https://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div
+						används sektioner för att gruppera element som under en kontext skapar ett form av tema. 
+						Divs framför inte en någon "mening" eller "betydelse" utan används för att gruppera element
+						som i detta fall -->
 						<span></span>
 						<!-- Jag använder mig av span element för att skapa linjerna -->
 						<span></span>
@@ -45,7 +49,6 @@
 					<!-- Detta visar logotypen -->
 				</div>
 			</header>
-
 			<main>
 				<!-- Denna definierar vad som finns i main -->
 				<section>
@@ -55,7 +58,7 @@
 				<section>
 					<!-- En sektion med 3 olika artiklar med titel och text -->
 					<article>
-						<h2>Popmusik</h2>
+						<h3>Popmusik</h3>
 						<p>
 							Populärmusiken, förkortad till popmusik, är en genre av musik som har en
 							bred appell inom populärkulturen. Med dess melodiska och rytmiska
@@ -67,7 +70,7 @@
 						</p>
 					</article>
 					<article>
-						<h2>Musikens Makt</h2>
+						<h3>Musikens Makt</h3>
 						<p>
 							Musik är en konstform som uttrycker känslor och tankar genom ljud. Genom
 							åren har musik haft en betydande inverkan på mänskligheten, och
@@ -77,7 +80,7 @@
 						</p>
 					</article>
 					<article>
-						<h2>Musikens Inflytande</h2>
+						<h3>Musikens Inflytande</h3>
 						<p>
 							Musikindustrin har under lång tid varit en central aktör inom
 							populärkulturen och har format och påverkat trender och fenomen som
@@ -91,7 +94,7 @@
 				<section>
 					<!-- En sektion som innehåller ytterligare 2 sektioner varav en är tom -->
 					<section>
-						<h2>Musikens Roll</h2>
+						<h3>Musikens Roll</h3>
 						<p>
 							Musik är en kraftfull form av självuttryck och kreativitet som kan
 							beröra och inspirera människor över hela världen. Genom att utforska
@@ -101,7 +104,7 @@
 							del av vår personliga utveckling och identitet.
 						</p>
 
-						<h2>Musikens Betydelse</h2>
+						<h3>Musikens Betydelse</h3>
 						<p>
 							Musikens kraft sträcker sig långt bortom bara underhållning. Den kan
 							vara terapeutisk, läkande och tröstande, och fungera som en verktyg för
@@ -118,7 +121,7 @@
 				<section>
 					<section></section>
 					<section>
-						<h2>Musikens Språk</h2>
+						<h3>Musikens Språk</h3>
 						<p>
 							Musikens universella språk har en förmåga att överbrygga kulturella och
 							språkliga gränser, vilket skapar en känsla av enhet och samhörighet
@@ -129,7 +132,7 @@
 							begränsningar.
 						</p>
 
-						<h2>Musikens Förenande Kraft</h2>
+						<h3>Musikens Förenande Kraft</h3>
 						<p>
 							Musik är en universell språk som når människor på ett djupare plan än
 							bara ord. Genom dess kraft att skapa känslomässig resonans och empati,
@@ -142,7 +145,6 @@
 					</section>
 				</section>
 			</main>
-
 			<footer>
 				<!-- Denna definierar vad som finns i main -->
 				<section>

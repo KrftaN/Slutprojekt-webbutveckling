@@ -30,13 +30,12 @@
 					<img src="../src/img/logo-white.png" alt="Vår logotyp">
 				</div>
 			</header>
-
 			<main>
 				<form method="post" action="#">
 					<!-- Skapar en form med metoden post som inte har en action -->
 					<h2>Favoritlåt</h2>
 
-					<fieldset class="credentials">
+					<fieldset>
 						<!-- Skapar en indelning i formen -->
 						<legend>Personuppgifter</legend>
 
@@ -85,7 +84,8 @@
 							max="99"
 						><br>
 					</fieldset>
-					<fieldset class="song">
+
+					<fieldset>
 						<legend>Låt</legend>
 						<label for="songName">Namn:*</label>
 						<input
@@ -216,7 +216,7 @@
 							<!-- Radioknappar med indelning -->
 							<legend>När släptes låten?</legend>
 
-							<div class="radio-group">
+							<section>
 								<input
 									type="radio"
 									id="option1"
@@ -225,26 +225,26 @@
 									checked
 								>
 								<label for="option1">1900-1950</label>
-							</div>
+							</section>
 
-							<div class="radio-group">
+							<section>
 								<input type="radio" id="option2" name="option" value="option2">
 								<label for="option2">1950-1980</label>
-							</div>
+							</section>
 
-							<div class="radio-group">
+							<section>
 								<input type="radio" id="option3" name="option" value="option3">
 								<label for="option3">1980-2020</label>
-							</div>
+							</section>
 						</fieldset>
 
 						<label for="reason">Varför är det din favoritlåt?</label>
 						<textarea id="reason" placeholder="Skriv här:" name="reason"></textarea>
 					</fieldset>
 
-					<div class="submit">
+					<section>
 						<!-- Submitknapp -->
-						<div class="acceptTerms">
+						<section>
 							<input
 								type="checkbox"
 								id="accept"
@@ -253,15 +253,14 @@
 								required
 							>
 							<label for="accept">
-								Godkänner du våra <a href="./user-agreement.html">användarvillkor?</a></label
-							>
-						</div>
+								Godkänner du våra <a href="./user-agreement.html">användarvillkor?</a>
+							</label>
+						</section>
 
 						<input type="submit" value="Skicka">
-					</div>
+					</section>
 				</form>
 			</main>
-
 			<footer>
 				<section>
 					<img src="../src/img/logo-white.png" alt="Logotyp">
@@ -272,7 +271,6 @@
 						<li><a href="./favourite-song.html">Favoritlåt</a></li>
 					</ul>
 				</section>
-
 				<section>
 					<p>Upphovsrätt ©2024 | Designad av Malte Elwhagen</p>
 				</section>
