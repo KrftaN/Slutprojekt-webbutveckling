@@ -56,6 +56,7 @@ body {
 	grid-template-rows: 75px 75px auto 150px;
 }
 
+h1,
 h2,
 h3,
 p {
@@ -87,6 +88,7 @@ header {
 	grid-template-columns: 1fr 1fr 1fr; /* Detta gör att headern delas upp i 3 lika stora delar, och tilldelar en del per element */
 	place-items: center; /* Detta cenrerar element horizontellt och vertikalt i sin del av headern*/
 	background-color: var(--off-gray);
+	height: 100%;
 }
 
 footer a, /* Detta är en gruppselektor som väljer alla a element i footern, nav & lokal nav */
@@ -96,6 +98,8 @@ header h1 a,
 	text-decoration: none; /* Dettar tar bort linjen under länkarna */
 	position: relative; /* Detta ger alla länkar position relative vilket behövs för att få animation att fungera */
 	padding: 10px;
+	display: flex; /* Har en skum bugg på chrome som ändrar positionen på h1, detta löste det dock */
+	justify-content: center; /* centrerar h1:an */
 }
 
 footer a:hover::before,
