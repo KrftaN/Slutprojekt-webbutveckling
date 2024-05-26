@@ -90,6 +90,10 @@ header {
 	background-color: var(--off-gray);
 	height: 100%;
 }
+header h1 {
+	display: flex; /* Har en skum bugg på chrome som ändrar positionen på h1, detta löste det dock */
+	justify-content: center; /* centrerar h1:an */
+}
 
 footer a, /* Detta är en gruppselektor som väljer alla a element i footern, nav & lokal nav */
 header h1 a,
@@ -98,8 +102,6 @@ header h1 a,
 	text-decoration: none; /* Dettar tar bort linjen under länkarna */
 	position: relative; /* Detta ger alla länkar position relative vilket behövs för att få animation att fungera */
 	padding: 10px;
-	display: flex; /* Har en skum bugg på chrome som ändrar positionen på h1, detta löste det dock */
-	justify-content: center; /* centrerar h1:an */
 }
 
 footer a:hover::before,
