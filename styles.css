@@ -973,22 +973,10 @@ form input[type="submit"]:hover {
 /*----------------------------------- LoVE Focus Hate  ------------------------------*/
 /*-----------------------------------------------------------------------------------*/
 /* Jag antar att man inte får ha gruppselektor för love focus hate???? eller vad menas med felaktig love focus hate??? */
-a:link{
-	color: inherit;
-} 
-
-a:visited{
-	color: inherit;
-}
-
-a:hover{
-	color: inherit;
-}
-
-a:focus{
-	color: inherit;
-}
-
+a:link,
+a:visited,
+a:focus,
+a:hover,
 a:active {
 	color: inherit;
 }
